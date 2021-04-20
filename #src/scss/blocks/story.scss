@@ -11,6 +11,7 @@
     &__title-autor-wrapper {
         display: flex;
         justify-content: space-between;
+        flex-direction: row-reverse;
         padding-left: 70px;
         padding-right: 17px;
     }

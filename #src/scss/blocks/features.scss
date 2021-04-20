@@ -1,0 +1,91 @@
+.features {
+    padding: 60px 0;
+    background-color: #C4CFC4;
+    overflow-y: hidden;
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+
+        &--passion {
+            padding-bottom: 120px;
+        }
+
+        &--commitment {
+            padding: 60px 0;
+        }
+    }
+
+    &__item-slogan {
+        padding: 0;
+        margin: 0;
+        font-family: "Playfair Display", Georgia, serif;
+        font-size: 85px;
+        line-height: 85px;
+        font-weight: 400;
+        letter-spacing: 0em;
+
+        &--white {
+            color: #ffffff;
+        }
+    }
+
+    &__item--passion &__item-slogan {
+        margin-bottom: 40px;
+    }
+
+    &__item--commitment &__item-slogan {
+        margin-bottom: 60px;
+    }
+
+    &__item-text {
+        padding: 0;
+        margin: 0;
+        font-family: "IBM Plex Sans", Arial, sans-serif;
+        font-size: 18px;
+        line-height: 25px;
+        font-weight: 400;
+        letter-spacing: 0em;
+    }
+
+    &__item--passion &__item-text {
+        max-width: 590px;
+    }
+
+    &__item--commitment &__item-text {
+        max-width: 400px;
+        margin-left: auto;
+        margin-right: 191px;
+    }
+
+    &__call {
+        width: 878px;
+        padding: 0;
+        margin: 0;
+        font-family: "Playfair Display", Georgia, serif;
+        font-size: 47px;
+        line-height: 50px;
+        font-weight: 400;
+        letter-spacing: 0em;
+    }
+
+    &__img img {
+        display: block;
+    }
+
+    &__bg-figure-wrapper {
+        position: relative;
+    }
+
+    &__bg-figure-1 {
+        position: absolute;
+        right: -110px;
+        top: -40px;
+    }
+
+    &__bg-figure-2 {
+        position: absolute;
+        left: -35px;
+        bottom: -310px;
+    }
+}

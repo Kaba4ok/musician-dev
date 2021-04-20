@@ -432,8 +432,34 @@ template {
   font-display: swap;
 }
 
-.container {
+.visually-hidden:not(:focus):not(:active) {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  -webkit-clip-path: inset(100%);
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.nbsp {
+  white-space: nowrap;
+}
+
+.container-large {
   max-width: 1360px;
+  width: 100%;
+  margin: 0 auto;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 1220px;
   width: 100%;
   margin: 0 auto;
   -webkit-box-sizing: border-box;
@@ -730,6 +756,10 @@ template {
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+  -ms-flex-direction: row-reverse;
+  flex-direction: row-reverse;
   padding-left: 70px;
   padding-right: 17px;
 }
@@ -802,7 +832,108 @@ template {
   transform: translateY(75px);
 }
 
+.features {
+  padding: 60px 0;
+  background-color: #C4CFC4;
+  overflow-y: hidden;
+}
+
+.features__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.features__item--passion {
+  padding-bottom: 120px;
+}
+
+.features__item--commitment {
+  padding: 60px 0;
+}
+
+.features__item-slogan {
+  padding: 0;
+  margin: 0;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 85px;
+  line-height: 85px;
+  font-weight: 400;
+  letter-spacing: 0em;
+}
+
+.features__item-slogan--white {
+  color: #ffffff;
+}
+
+.features__item--passion .features__item-slogan {
+  margin-bottom: 40px;
+}
+
+.features__item--commitment .features__item-slogan {
+  margin-bottom: 60px;
+}
+
+.features__item-text {
+  padding: 0;
+  margin: 0;
+  font-family: "IBM Plex Sans", Arial, sans-serif;
+  font-size: 18px;
+  line-height: 25px;
+  font-weight: 400;
+  letter-spacing: 0em;
+}
+
+.features__item--passion .features__item-text {
+  max-width: 590px;
+}
+
+.features__item--commitment .features__item-text {
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: 191px;
+}
+
+.features__call {
+  width: 878px;
+  padding: 0;
+  margin: 0;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 47px;
+  line-height: 50px;
+  font-weight: 400;
+  letter-spacing: 0em;
+}
+
+.features__img img {
+  display: block;
+}
+
+.features__bg-figure-wrapper {
+  position: relative;
+}
+
+.features__bg-figure-1 {
+  position: absolute;
+  right: -110px;
+  top: -40px;
+}
+
+.features__bg-figure-2 {
+  position: absolute;
+  left: -35px;
+  bottom: -310px;
+}
+
 @media screen and (max-width: 1360px) {
+  .container-large {
+    padding: 0 20px;
+  }
+
   .container {
     padding: 0 20px;
   }

@@ -1,9 +1,38 @@
+.visually-hidden:not(:focus):not(:active) {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    -webkit-clip-path: inset(100%);
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+.nbsp {
+    white-space: nowrap;
+}
+
 body {
     // overflow: hidden;
 }
 
-.container {
+.container-large {
     max-width: 1360px;
+    width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+
+    @media screen and (max-width: 1360px) {
+        padding: 0 20px;
+    }
+}
+
+.container {
+    max-width: 1220px;
     width: 100%;
     margin: 0 auto;
     box-sizing: border-box;

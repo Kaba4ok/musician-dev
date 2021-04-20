@@ -1,8 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><symbol id="about-bg-figure-1" viewBox="0 0 951 413">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><symbol id="features-bg-figure-1" viewBox="0 0 951 413">
 <circle opacity="0.1" cx="631" cy="207" r="204.5" stroke="black"/>
 <path opacity="0.1" d="M431 1L842 412" stroke="black"/>
 <path opacity="0.1" d="M0.99783 411H950.032" stroke="black"/>
-</symbol><symbol id="about-bg-figure-2" viewBox="0 0 692 691">
+</symbol><symbol id="features-bg-figure-2" viewBox="0 0 692 691">
 <path opacity="0.05" d="M621 30H2.59876e-05" stroke="black"/>
 <path opacity="0.05" d="M31 620L31 2.74181e-05" stroke="black"/>
 <circle opacity="0.1" cx="326" cy="325" r="294.5" stroke="black"/>
@@ -20,5 +20,5 @@
 <path d="M129.173 15.9264V15.8245C128.719 15.8245 128.464 15.6999 128.464 15.1677V0.832272C128.464 0.300071 128.719 0.175514 129.173 0.175514V0.0736023H126.988V0.175514C127.442 0.175514 127.697 0.300071 127.697 0.832272V15.1677C127.697 15.6999 127.442 15.8245 126.988 15.8245V15.9264H129.173Z" fill="white"/>
 <path d="M146.592 5.0729C145.423 2.12881 142.544 0 139.087 0C134.687 0 131.076 3.60085 131.076 7.98868C131.076 12.3482 134.613 16 139.138 16C142.596 16 145.548 13.7976 146.666 10.7289H146.388C145.548 13.5655 142.976 15.5471 139.797 15.5471C135.374 15.5471 131.53 11.7197 131.53 7.33192C131.53 3.40269 134.511 0.452938 138.428 0.452938C141.579 0.452938 144.401 2.38358 145.803 5.0729H146.592Z" fill="white"/>
 </symbol><symbol id="my-story-bg-circle" viewBox="0 0 480 480">
-<circle opacity="0.2" r="239.5" transform="matrix(-1 0 0 1 240 240)" stroke="white" fill="none"/>
+<circle opacity="0.2" r="239.5" transform="matrix(-1 0 0 1 240 240)" stroke="white"/>
 </symbol></svg>
