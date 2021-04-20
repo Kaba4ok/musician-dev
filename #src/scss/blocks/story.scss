@@ -1,0 +1,81 @@
+.story {
+    height: 100vh;
+    background-color: black;
+    color: white;
+
+    &__inner-wrapper {
+        position: relative;
+        padding-top: 235px;
+    }
+
+    &__title-autor-wrapper {
+        display: flex;
+        justify-content: space-between;
+        padding-left: 70px;
+        padding-right: 17px;
+    }
+
+    &__title {
+        padding: 0;
+        margin: 0;
+        font-family: "Playfair Display", Georgia, serif;
+        font-size: 85px;
+        line-height: 90px;
+        letter-spacing: 0em;
+    }
+
+    &__autor {
+        padding: 0;
+        margin: 0;
+        font-family: "Playfair Display", Georgia, serif;
+        font-size: 85px;
+        line-height: 90px;
+        letter-spacing: 0em;
+        color: #4E534E;
+    }
+
+    &__text-wrapper {
+        display: flex;
+        padding-top: 35px;
+    }
+
+    &__text {
+        padding: 0;
+        margin: 0;
+        max-width: 380px;
+        font-family: "IBM Plex Sans", Arial, sans-serif;
+        font-size: 18px;
+        font-style: italic;
+        font-weight: 500;
+        line-height: 25px;
+        letter-spacing: 0em;
+        color: #c4c4c4;
+
+        &--white {
+            color: white;
+        }
+
+        &--not-italic {
+            font-style: normal;
+            font-weight: 400;
+        }
+
+        &--not-italic-white {
+            font-style: normal;
+            font-weight: 400;
+            color: white;
+        }
+
+        &:first-child {
+            margin-left: auto;
+            margin-right: 40px;
+        }
+    }
+
+    &__bg-circle {
+        position: absolute;
+        right: 0;
+        top: 0;
+        transform: translateY(75px);
+    }
+}
