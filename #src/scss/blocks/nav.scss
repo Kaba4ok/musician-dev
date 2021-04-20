@@ -1,0 +1,22 @@
+.nav {
+    display: flex;
+    margin-bottom: 25px;
+
+    &__link {
+        font-family: "IBM Plex Sans", Arial, sans-serif;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 20px;
+        letter-spacing: 0.05em;
+        color: #ffffff;
+        text-transform: uppercase;
+        text-decoration: none;
+
+        &--story {
+            margin-right: 58px;
+        }
+        &--facts {
+            margin-right: 60px;
+        }
+    }
+}

@@ -1,4 +1,9 @@
 @import 'scaffolding/normalize';
 @import 'scaffolding/fonts';
+@import 'scaffolding/general';
 
-@import 'blocks/block';
+@import 'blocks/hero';
+@import 'blocks/header';
+@import 'blocks/utterance';
+@import 'blocks/nav';
+@import 'blocks/social';

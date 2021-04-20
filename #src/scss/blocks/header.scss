@@ -1,0 +1,104 @@
+.header {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    padding-top: 30px;
+
+    &__inner-wrapper {
+        display: flex;
+        align-items: flex-start;
+    }
+
+    &__logo-music-toggle-wrapper {
+        margin-right: auto;
+    }
+
+    &__nav-social-wrapper {
+        margin-right: 185px;
+    }
+
+    &__logo {
+        display: block;
+        margin-bottom: 75px;
+    }
+
+    &__sound-toggle {
+        position: relative;
+        padding: 0;
+        padding-right: 20px;
+        background: none;
+        border: none;
+        cursor: pointer;
+
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            right: 0;
+            top: 50%;
+            width: 12px;
+            height: 2px;
+            background-color: #ffffff;
+        }
+
+        &::before {
+            transform: translateY(-50%) rotate(45deg);
+        }
+
+        &::after {
+            transform: translateY(-50%) rotate(-45deg);
+        }
+    }
+
+    &__sound-toggle-text {
+        opacity: 0.6;
+    }
+
+    &__btn {
+        font-family: "IBM Plex Sans", Arial, sans-serif;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 20px;
+        letter-spacing: 0.05em;
+        color: #ffffff;
+        text-transform: uppercase;
+        text-decoration: none;
+    }
+
+    &__cta {
+        position: relative;
+        display: block;
+        padding-left: 45px;
+    }
+
+    &__cta-icon {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 30px;
+        height: 30px;
+        background-color: #fff;
+        border-radius: 50%;
+        transform: translateY(-50%);
+
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 20px;
+            height: 2px;
+            background-color: #000000;
+        }
+
+        &::before {
+            transform: translate(-50%, -50%);
+        }
+
+        &::after {
+            transform: translate(-50%, -50%) rotate(90deg);
+        }
+    }
+}

@@ -4,17 +4,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Dmitriy Isakov</title>
     <link rel="stylesheet" href="./css/style.min.css">
 </head>
 
 <body>
-    <main>
-        <!-- Example use svg -->
+    <header class="header">
+        <div class="container">
+            <div class="header__inner-wrapper">
+                <div class="header__logo-music-toggle-wrapper">
+                    <a class="header__logo" href="#">
+                        <svg width="147" height="16">
+                            <use xlink:href="./img/sprite.svg#logo"></use>
+                        </svg>
+                    </a>
         
-        <!-- <svg class="svg" width="24" height="24">
-            <use xlink:href="./img/sprite.svg#fb"></use>
-        </svg> -->
+                    <button class="header__sound-toggle header__btn"><span class="header__sound-toggle-text">music off</span></button>
+                </div>
+    
+                <div class="header__nav-social-wrapper">
+                    <nav class="header__nav nav">
+                        <a class="nav__link nav__link--story" href="#">Story</a>
+                        <a class="nav__link nav__link--facts" href="#">Facts</a>
+                        <a class="nav__link" href="#">Pricess</a>
+                    </nav>
+        
+                    <ul class="header__social social">
+                        <li class="social__item social__item--tw">
+                            <a class="social__link" href="#">Twitter</a>
+                        </li>
+                        <li class="social__item social__item--fb">
+                            <a class="social__link" href="#">Facebook</a>
+                        </li>
+                        <li class="social__item">
+                            <a class="social__link" href="#">Instagram</a>
+                        </li>
+                    </ul>
+                </div>
+        
+                <a class="header__cta header__btn" href="#">
+                    <span class="header__cta-icon"></span>
+                    Start your jorney
+                </a>
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        <section class="hero">
+            <div class="hero__inner-wrapper">
+                <div class="container">
+                    <div class="hero__slogan-hashtag-wrapper">
+                        <p class="hero__slogan hero__text">Passion and Commitment.</p>
+                        <a class="hero__hashtag hero__text" href="#">#isakovMusic</a>
+                    </div>
+                </div>
+                <div class="hero__utterance utterance">
+                    <div class="container">
+                        <div class="utterance__inner-wrapper">
+                            <p class="utterance__text">The better we <span class="utterance__text--important">learn music</span>, the bigger <span class="utterance__text--important">interest</span> we show.</p>
+                            <button class="utterance__scroll-btn">scroll.</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="story"></section>
     </main>
 </body>
 
