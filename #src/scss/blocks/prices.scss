@@ -1,0 +1,125 @@
+.prices {
+    padding-top: 40px;
+    padding-bottom: 121px;
+    font-family: "IBM Plex Sans", Arial, sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 25px;
+    letter-spacing: 0em;
+    color: #ffffff;
+    background-color: black;
+
+    &__title-offer-wrapper {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 80px;
+    }
+
+    &__title {
+        padding: 0;
+        margin: 0;
+        font-family: "Playfair Display", Georgia, serif;
+        font-size: 45px;
+        font-weight: 400;
+        line-height: 50px;
+        letter-spacing: 0em;
+    }
+
+    &__offer {
+        width: 610px;
+        padding: 0;
+        padding-top: 10px;
+        margin: 0;
+    }
+
+    &__list {
+        display: flex;
+        justify-content: space-between;
+        width: 920px;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+    }
+
+    &__item {
+        padding-left: 21px;
+        padding-bottom: 5px;
+        border-left: 1px solid rgba($color: #ffffff, $alpha: .1);
+
+        &:first-child {
+            padding-left: 0;
+            border-left: none;
+        }
+    }
+
+    &__cost {
+        padding: 0;
+        margin: 0;
+        margin-bottom: 15px;
+        font-family: "Playfair Display", Georgia, serif;
+        font-size: 45px;
+        font-weight: 400;
+        line-height: 50px;
+        letter-spacing: 0em;
+    }
+
+    &__name {
+        padding: 0;
+        margin: 0;
+        margin-bottom: 60px;
+        color: rgba($color: #ffffff, $alpha: .6);
+    }
+
+    &__choose-btn {
+        position: relative;
+        display: block;
+        padding-left: 45px;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 20px;
+        letter-spacing: 0.05em;
+        color: #ffffff;
+        text-decoration: none;
+        text-transform: uppercase;
+    }
+
+    &__choose-btn-icon {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        display: block;
+        width: 30px;
+        height: 30px;
+        background-color: #ffffff;
+        border-radius: 50%;
+        transform: translateY(-50%);
+
+        &--best {
+            background-color: #EB444A;
+        }
+
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 20px;
+            height: 2px;
+            background-color: #000000;
+        }
+
+        &::before {
+            transform: translate(-50%, -50%);
+        }
+
+        &::after {
+            transform: translate(-50%, -50%) rotate(90deg);
+        }
+
+        &--best::before,
+        &--best::after {
+            background-color: #ffffff;
+        }
+    }
+}
