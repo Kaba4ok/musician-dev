@@ -835,7 +835,7 @@ template {
 .features {
   padding: 60px 0;
   background-color: #C4CFC4;
-  overflow-y: hidden;
+  overflow: hidden;
 }
 
 .features__item {
@@ -927,6 +927,88 @@ template {
   position: absolute;
   left: -35px;
   bottom: -310px;
+}
+
+.facts {
+  padding-top: 78px;
+  padding-bottom: 75px;
+  font-family: "Playfair Display", Georgia, serif;
+  color: #ffffff;
+  background-color: #000000;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+  overflow: hidden;
+}
+
+.facts__inner-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.facts__list-wrapper {
+  position: relative;
+  width: 610px;
+  margin-left: auto;
+}
+
+.facts__title {
+  padding: 0;
+  margin: 0;
+  font-size: 45px;
+  font-weight: 400;
+  line-height: 50px;
+  letter-spacing: 0em;
+}
+
+.facts__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.facts__item {
+  padding: 20px 0;
+  margin-right: 65px;
+}
+
+.facts__item:nth-child(2n) {
+  margin-right: 0;
+}
+
+.facts__item-title {
+  padding: 0;
+  margin: 0;
+  margin-bottom: 20px;
+  font-size: 65px;
+  font-weight: 700;
+  line-height: 65px;
+  letter-spacing: 0em;
+}
+
+.facts__item-description {
+  padding: 0;
+  margin: 0;
+  font-family: "IBM Plex Sans", Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 25px;
+  letter-spacing: 0em;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.facts__separator {
+  position: absolute;
+  width: 100vw;
+  height: 1px;
+  background-color: #C4C4C4;
+  opacity: 0.4;
+  top: 50%;
+  left: 0;
 }
 
 @media screen and (max-width: 1360px) {
