@@ -19,4 +19,35 @@
             margin-right: 60px;
         }
     }
+
+    @media (max-width: 1000px) {
+
+        &__link {
+    
+            &--story {
+                margin-right: 40px;
+            }
+            &--facts {
+                margin-right: 40px;
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        width: 100%;
+        flex-wrap: wrap;
+        margin-bottom: 10px;
+
+        &__link {
+            padding: 10px 0;
+            font-size: 12px;
+    
+            &--story {
+                margin-right: 40px;
+            }
+            &--facts {
+                margin-right: 40px;
+            }
+        }
+    }
 }

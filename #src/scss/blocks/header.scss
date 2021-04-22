@@ -5,6 +5,10 @@
     width: 100%;
     padding-top: 30px;
 
+    &__burger {
+        display: none;
+    }
+
     &__inner-wrapper {
         display: flex;
         align-items: flex-start;
@@ -99,6 +103,55 @@
 
         &::after {
             transform: translate(-50%, -50%) rotate(90deg);
+        }
+    }
+
+    @media (max-width: 1000px) {
+        &__nav-social-wrapper {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            order: 1;
+            margin-right: auto;
+        }
+
+        &__inner-wrapper {
+            flex-wrap: wrap;
+        }
+
+        &__logo-music-toggle-wrapper {
+            display: flex;
+            margin-bottom: 50px;
+        }
+
+        &__logo {
+            margin-right: 50px;
+            margin-bottom: 0;
+        }
+    }
+
+    @media (max-width: 768px) {
+
+        &__logo-music-toggle-wrapper {
+            width: 100%;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-right: 0;
+            margin-bottom: 50px;
+        }
+
+        &__logo {
+            margin-right: 0;
+        }
+
+        &__nav-social-wrapper {
+            flex-direction: column;
+            order: 0;
+            margin-bottom: 50px;
+        }
+
+        &__btn {
+            font-size: 12px;
         }
     }
 }

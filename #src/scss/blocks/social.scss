@@ -25,4 +25,38 @@
             margin-right: 27px;
         }
     }
+
+    @media (max-width: 1000px) {
+
+        &__item {
+            opacity: 0.6;
+    
+            &--tw {
+                margin-right: 40px;
+            }
+            &--fb {
+                margin-right: 40px;
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        width: 100%;
+        flex-wrap: wrap;
+
+        &__item {
+            padding: 10px 0;
+    
+            &--tw {
+                margin-right: 40px;
+            }
+            &--fb {
+                margin-right: 40px;
+            }
+        }
+
+        &__link {
+            font-size: 12px;
+        }
+    }
 }
