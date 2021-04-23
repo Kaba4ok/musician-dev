@@ -912,7 +912,7 @@ template {
 }
 
 .features__call {
-  width: 878px;
+  max-width: 878px;
   padding: 0;
   margin: 0;
   font-family: "Playfair Display", Georgia, serif;
@@ -1578,6 +1578,7 @@ template {
 
   .story__title-autor-wrapper {
     padding-left: 0px;
+    padding-right: 0;
   }
 
   .story__autor {
@@ -1601,6 +1602,50 @@ template {
     padding-left: 0px;
     margin-bottom: 30px;
     margin-left: 0;
+    margin-right: 0;
+  }
+
+  .features__item--passion {
+    padding-bottom: 50px;
+  }
+
+  .features__item--commitment {
+    padding: 40px 0;
+  }
+
+  .features__item--commitment .features__item-slogan {
+    margin-bottom: 50px;
+  }
+
+  .features__item-slogan {
+    font-size: 50px;
+    line-height: 50px;
+  }
+
+  .features__item--commitment .features__item-text {
+    max-width: 400px;
+    margin: 0;
+  }
+
+  .features__item-text .nbsp {
+    white-space: normal;
+  }
+
+  .features__call {
+    font-size: 34px;
+    line-height: 38px;
+  }
+}
+
+@media (max-width: 400px) {
+  .features__item-slogan {
+    font-size: 40px;
+    line-height: 40px;
+  }
+
+  .features__call {
+    font-size: 30px;
+    line-height: 34px;
   }
 }
 
