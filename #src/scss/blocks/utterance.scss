@@ -1,4 +1,7 @@
 .utterance {
+    // position: sticky;
+    // left: 0;
+    // bottom: 0;
     padding-top: 30px;
     padding-bottom: 75px;
     border-top: 1px solid #FFFFFF;
@@ -12,6 +15,7 @@
     &__text {
         padding: 0;
         margin: 0;
+        margin-right: 100px;
         font-family: "Playfair Display", Georgia, serif;
         font-size: 47px;
         font-weight: 400;
@@ -37,5 +41,30 @@
         background: none;
         border: none;
         cursor: pointer;
+    }
+
+    @media (max-width: 1000px) {
+
+        &__text {
+            margin-right: 0;
+        }
+
+        &__scroll-btn {
+            display: none;
+        }
+    }
+
+    @media (max-width: 768px) {
+        padding-bottom: 30px;
+
+        &__text {
+            font-size: 30px;
+        }
+    }
+
+    @media (max-width: 320px) {
+        &__text {
+            font-size: 24px;
+        }
     }
 }
