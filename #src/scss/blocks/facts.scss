@@ -13,7 +13,7 @@
 
     &__list-wrapper {
         position: relative;
-        width: 610px;
+        max-width: 610px;
         margin-left: auto;
     }
 
@@ -72,5 +72,38 @@
         opacity: 0.4;
         top: 50%;
         left: 0;
+    }
+
+    @media (max-width: 1000px) {
+        
+        &__inner-wrapper {
+            flex-direction: column;
+        }
+
+        &__list-wrapper {
+            margin-left: 0;
+        }
+
+        &__title {
+            margin-bottom: 30px;
+        }
+    }
+
+    @media (max-width: 610px) {
+
+        &__item {
+            padding: 10px 0 5px;
+        }
+
+        &__item-title {
+            margin-bottom: 5px;
+            font-size: 40px;
+            line-height: 44px;
+        }
+        
+        &__separator {
+            display: none;
+        }
+    
     }
 }

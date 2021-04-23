@@ -962,7 +962,7 @@ template {
 
 .facts__list-wrapper {
   position: relative;
-  width: 610px;
+  max-width: 610px;
   margin-left: auto;
 }
 
@@ -1460,6 +1460,21 @@ template {
   .social__item--fb {
     margin-right: 40px;
   }
+
+  .facts__inner-wrapper {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+
+  .facts__list-wrapper {
+    margin-left: 0;
+  }
+
+  .facts__title {
+    margin-bottom: 30px;
+  }
 }
 
 @media (max-width: 930px) {
@@ -1634,6 +1649,22 @@ template {
   .features__call {
     font-size: 34px;
     line-height: 38px;
+  }
+}
+
+@media (max-width: 610px) {
+  .facts__item {
+    padding: 10px 0 5px;
+  }
+
+  .facts__item-title {
+    margin-bottom: 5px;
+    font-size: 40px;
+    line-height: 44px;
+  }
+
+  .facts__separator {
+    display: none;
   }
 }
 
