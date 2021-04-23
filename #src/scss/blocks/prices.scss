@@ -26,7 +26,7 @@
     }
 
     &__offer {
-        width: 610px;
+        max-width: 610px;
         padding: 0;
         padding-top: 10px;
         margin: 0;
@@ -35,7 +35,7 @@
     &__list {
         display: flex;
         justify-content: space-between;
-        width: 920px;
+        max-width: 920px;
         padding: 0;
         margin: 0;
         list-style: none;
@@ -120,6 +120,43 @@
         &--best::before,
         &--best::after {
             background-color: #ffffff;
+        }
+    }
+
+    @media (max-width: 1000px) {
+        padding-bottom: 80px;
+
+        &__title-offer-wrapper {
+            flex-direction: column;
+            margin-bottom: 50px;
+        }
+
+        &__title {
+            margin-bottom: 40px;
+        }
+
+        &__offer {
+            padding-top: 0;
+        }
+
+        &__list {
+            flex-direction: column;
+        }
+
+        &__item {
+            padding-left: 0;
+            padding-bottom: 30px;
+            margin-bottom: 30px;
+            border-left: none;
+            border-bottom: 1px solid rgba($color: #ffffff, $alpha: .1);
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        &__name {
+            margin-bottom: 40px;
         }
     }
 }
