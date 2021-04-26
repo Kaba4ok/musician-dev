@@ -2,6 +2,7 @@
     width: 100%;
     height: 100vh;
     background-image: repeating-linear-gradient(to bottom, black, black 1px, transparent 1px, transparent 5px),
+    linear-gradient(to top, rgba($color: #000000, $alpha: 0.8), rgba($color: #000000, $alpha: 0.8)),
     url(../img/bg-hero.jpg);
     background-repeat: no-repeat;
     background-size: cover;
