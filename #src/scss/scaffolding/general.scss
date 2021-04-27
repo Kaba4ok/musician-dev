@@ -16,9 +16,19 @@
     white-space: nowrap;
 }
 
-// body {
-//     overflow: hidden;
-// }
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+}
+
+html {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.content {
+    overflow: hidden;
+}
 
 .container-large {
     max-width: 1360px;

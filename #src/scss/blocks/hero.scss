@@ -1,11 +1,15 @@
 .hero {
     width: 100%;
     height: 100vh;
-    background-image: repeating-linear-gradient(to bottom, black, black 1px, transparent 1px, transparent 5px),
-    linear-gradient(to top, rgba($color: #000000, $alpha: 0.8), rgba($color: #000000, $alpha: 0.8)),
-    url(../img/bg-hero.jpg);
+    background-image: repeating-linear-gradient(to bottom, black, black 1px, transparent 1px, transparent 5px), url(../img/bg-hero.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+
+    &__bg-layout {
+        height: 100%;
+        background-color: #000000;
+        opacity: 0.8;
+    }
 
     &__inner-wrapper {
         position: relative;

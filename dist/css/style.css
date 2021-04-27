@@ -450,6 +450,20 @@ template {
   white-space: nowrap;
 }
 
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
+html {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.content {
+  overflow: hidden;
+}
+
 .container-large {
   max-width: 1360px;
   width: 100%;
@@ -469,11 +483,16 @@ template {
 .hero {
   width: 100%;
   height: 100vh;
-  background-image: repeating-linear-gradient(to bottom, black, black 1px, transparent 1px, transparent 5px), -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.8)), to(rgba(0, 0, 0, 0.8))), url(../img/bg-hero.jpg);
-  background-image: -o-repeating-linear-gradient(top, black, black 1px, transparent 1px, transparent 5px), -o-linear-gradient(bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(../img/bg-hero.jpg);
-  background-image: repeating-linear-gradient(to bottom, black, black 1px, transparent 1px, transparent 5px), linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(../img/bg-hero.jpg);
+  background-image: -o-repeating-linear-gradient(top, black, black 1px, transparent 1px, transparent 5px), url(../img/bg-hero.jpg);
+  background-image: repeating-linear-gradient(to bottom, black, black 1px, transparent 1px, transparent 5px), url(../img/bg-hero.jpg);
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.hero__bg-layout {
+  height: 100%;
+  background-color: #000000;
+  opacity: 0.8;
 }
 
 .hero__inner-wrapper {
@@ -527,6 +546,7 @@ template {
   top: 0;
   width: 100%;
   padding-top: 30px;
+  z-index: 1;
 }
 
 .header__burger {
