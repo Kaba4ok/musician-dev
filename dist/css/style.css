@@ -460,7 +460,7 @@ html {
   scrollbar-width: none;
 }
 
-.content {
+body {
   overflow: hidden;
 }
 
@@ -490,12 +490,6 @@ html {
 }
 
 .hero__bg-layout {
-  height: 100%;
-  background-color: #000000;
-  opacity: 0.8;
-}
-
-.hero__inner-wrapper {
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -508,6 +502,8 @@ html {
   -ms-flex-pack: end;
   justify-content: flex-end;
   height: 100%;
+  background-color: #000000;
+  opacity: 0.8;
 }
 
 .hero__text {

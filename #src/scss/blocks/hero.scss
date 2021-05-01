@@ -6,17 +6,13 @@
     background-size: cover;
 
     &__bg-layout {
-        height: 100%;
-        background-color: #000000;
-        opacity: 0.8;
-    }
-
-    &__inner-wrapper {
         position: relative;
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
         height: 100%;
+        background-color: #000000;
+        opacity: 0.8;
     }
 
     &__text {
