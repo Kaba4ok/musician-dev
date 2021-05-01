@@ -39,8 +39,14 @@ if (document.documentElement.clientWidth > 1200) {
         storyFeaturesTopAnimation: {
 
             storyFeaturesTopAnimationTL: gsap.timeline({paused: true})
-            .to('.hero-story-wrapper', {y: '-100vh', duration: 2})
-            .to('.features', {y: '-200vh', duration: 2}, '-=2'),
+            .fromTo('.story__autor', {y: 0}, {y: '-100vh', duration: 2})
+            .fromTo('.story__title', {y: 0}, {y: '-100vh', duration: 2}, '-=2')
+            .fromTo('.story__text:nth-child(1)', {y: 0}, {y: '-100vh', duration: 2}, '-=1.9')
+            .fromTo('.story__text:nth-child(2)', {y: 0}, {y: '-100vh', duration: 2}, '-=1.9')
+            .fromTo('.story__bg-circle', {y: 80}, {y: '-100vh', duration: 2}, '-=2')
+            .fromTo('.features', {y: '-500vh'}, {y: '-200vh', duration: 2},'-=1.8')
+            .fromTo('.utterance', {opacity: 1}, {opacity: 0, duration: 1}, '-=2')
+            .to('.hero-story-wrapper', {y: '-200vh', duration: 0}, '-=1'),
 
             down() {
                 console.log('storyFeaturesTopAnimation_DOWN');

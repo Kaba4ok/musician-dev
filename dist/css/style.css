@@ -462,6 +462,7 @@ html {
 
 body {
   overflow: hidden;
+  background-color: black;
 }
 
 .container-large {
@@ -478,6 +479,10 @@ body {
   margin: 0 auto;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
+}
+
+.hero-story-wrapper {
+  position: relative;
 }
 
 .hero {
@@ -661,6 +666,10 @@ body {
 }
 
 .utterance {
+  position: absolute;
+  left: 0;
+  bottom: 100vh;
+  width: 100%;
   padding-top: 30px;
   padding-bottom: 75px;
   border-top: 1px solid #FFFFFF;

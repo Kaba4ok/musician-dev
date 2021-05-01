@@ -1,7 +1,8 @@
 .utterance {
-    // position: sticky;
-    // left: 0;
-    // bottom: 0;
+    position: absolute;
+    left: 0;
+    bottom: 100vh;
+    width: 100%;
     padding-top: 30px;
     padding-bottom: 75px;
     border-top: 1px solid #FFFFFF;
