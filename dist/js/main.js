@@ -39,14 +39,15 @@ if (document.documentElement.clientWidth > 1200) {
         storyFeaturesTopAnimation: {
 
             storyFeaturesTopAnimationTL: gsap.timeline({paused: true})
-            .fromTo('.story__autor', {y: 0}, {y: '-100vh', duration: 2})
-            .fromTo('.story__title', {y: 0}, {y: '-100vh', duration: 2}, '-=2')
-            .fromTo('.story__text:nth-child(1)', {y: 0}, {y: '-100vh', duration: 2}, '-=1.9')
-            .fromTo('.story__text:nth-child(2)', {y: 0}, {y: '-100vh', duration: 2}, '-=1.9')
-            .fromTo('.story__bg-circle', {y: 80}, {y: '-100vh', duration: 2}, '-=2')
-            .fromTo('.features', {y: '-500vh'}, {y: '-200vh', duration: 2},'-=1.8')
-            .fromTo('.utterance', {opacity: 1}, {opacity: 0, duration: 1}, '-=2')
-            .to('.hero-story-wrapper', {y: '-200vh', duration: 0}, '-=1'),
+            .fromTo('.story__bg-circle', {y: 80}, {y: '-100vh', duration: 2.6, ease: 'none'})
+            .fromTo('.story__autor', {y: 0}, {y: '-100vh', duration: 2.5}, '-=2.3')
+            .fromTo('.story__title', {y: 0}, {y: '-100vh', duration: 2.5}, '-=2.6')
+            .fromTo('.story__text:nth-child(1)', {y: 0}, {y: '-100vh', duration: 2.5}, '-=2.5')
+            .fromTo('.story__text:nth-child(2)', {y: 0}, {y: '-100vh', duration: 2.5}, '-=2.4')
+            .to('.story__bg-layout', {height: '100%', duration: 2}, '-=2.5')
+            .fromTo('.utterance', {opacity: 1}, {opacity: 0, duration: 1}, '-=2'),
+            // .to('.features', {y: '-200vh', duration: 0})
+            // .to('.hero-story-wrapper', {y: '-200vh', duration: 0}),
 
             down() {
                 console.log('storyFeaturesTopAnimation_DOWN');
@@ -160,3 +161,16 @@ if (document.documentElement.clientWidth > 1200) {
         }
     });
 }
+
+
+
+
+
+// .fromTo('.features', {y: '-500vh'}, {y: '-200vh', duration: 2},'-=3')
+// .fromTo('.utterance', {opacity: 1}, {opacity: 0, duration: 1}, '-=2')
+// .to('.hero-story-wrapper', {y: '-200vh', duration: 0}, '-=1')
+// .fromTo('.features__bg-figure-1', {y: 0, opacity: 0}, {y: 0, opacity: 1, duration: 1}, '-=1')
+// .from('.features__item', {y: '300vh', duration: 1}, '-=2')
+// .from('.features__img', {y: '300vh', duration: 1}, '-=2')
+// .from('.features__call', {y: '300vh', duration: 1}, '-=2')
+// .from('.features__bg-figure-2', {y: '300vh', duration: 1}, '-=2')

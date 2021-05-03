@@ -788,6 +788,15 @@ body {
   padding-top: 235px;
 }
 
+.story__bg-layout {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background-color: #C4CFC4;
+}
+
 .story__title-autor-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
