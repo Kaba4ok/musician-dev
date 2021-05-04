@@ -886,6 +886,11 @@ body {
   overflow: hidden;
 }
 
+.features__figure-item-wrapper {
+  padding-top: 180px;
+  padding-bottom: 120px;
+}
+
 .features__item {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -897,7 +902,8 @@ body {
 }
 
 .features__item--passion {
-  padding-bottom: 120px;
+  padding-top: 0;
+  padding-bottom: 0;
 }
 
 .features__item--commitment {
@@ -955,6 +961,10 @@ body {
   line-height: 50px;
   font-weight: 400;
   letter-spacing: 0em;
+}
+
+.features__img-wrapper {
+  overflow: hidden;
 }
 
 .features__img img {

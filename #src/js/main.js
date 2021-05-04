@@ -6,7 +6,7 @@ const DEBOUNCE_DURATION = 3500;
 if (document.documentElement.clientWidth > 1200) {
 
     let screenSwitcher = {
-        screens: ['hero', 'story', 'featuresTop', 'featuresBotoom', 'facts', 'prices', 'footer'],
+        screens: ['hero', 'story', 'featuresTop', 'featuresMiddle', 'featuresBotoom', 'facts', 'prices', 'footer'],
         currentSreen: 'hero',
         get lastScreenIndex () {
             return Number(this.screens.length) - 1;
@@ -45,9 +45,13 @@ if (document.documentElement.clientWidth > 1200) {
             .fromTo('.story__text:nth-child(1)', {y: 0}, {y: '-100vh', duration: 2.5}, '-=2.5')
             .fromTo('.story__text:nth-child(2)', {y: 0}, {y: '-100vh', duration: 2.5}, '-=2.4')
             .to('.story__bg-layout', {height: '100%', duration: 2}, '-=2.5')
-            .fromTo('.utterance', {opacity: 1}, {opacity: 0, duration: 1}, '-=2'),
-            // .to('.features', {y: '-200vh', duration: 0})
-            // .to('.hero-story-wrapper', {y: '-200vh', duration: 0}),
+            .fromTo('.utterance', {opacity: 1}, {opacity: 0, duration: 1}, '-=2')
+            .to('.features', {y: '-200vh', backgroundColor: 'transparent', duration: 0}, '-=1.8')
+            .from('.features__item-slogan', {y: '100vh', duration: 1.3}, '-=1.8')
+            .from('.features__item-text', {y: '100vh', duration: 1.3}, '-=1.7')
+            .from('.features__img', {y: '100vh', duration: 0}, '-=1.3')
+            .fromTo('.features__img-wrapper', {height: 0}, {height: 'auto', duration: 2.2}, '-=1')
+            .to('.features__img img', {y: -30, duration: 2.5}, '-=2.5'),
 
             down() {
                 console.log('storyFeaturesTopAnimation_DOWN');
@@ -57,12 +61,38 @@ if (document.documentElement.clientWidth > 1200) {
                 this.storyFeaturesTopAnimationTL.reverse();
             }
         },
-        storyFeaturesTopFeaturesBottomAnimation: {
+        featuresTopFeaturesMiddleAnimation: {
+
+            featuresTopFeaturesMiddleAnimationTL: gsap.timeline({paused: true})
+            .to('.features__item-slogan--passion', {y: '-90vh', duration: 3})
+            .to('.features__item-text--passion', {y: '-90vh', duration: 2.6}, '-=3')
+            .to('.features__bg-figure-1', {opacity: 0, duration: 1}, '-=3')
+            .to('.features__img-wrapper', {y: '-68vh', duration: 2}, '-=2.7'),
+
             down() {
-                console.log('storyFeaturesTopFeaturesBottomAnimation_DOWN');
+                console.log('featuresTopFeaturesMiddleAnimation_DOWN');
+                this.featuresTopFeaturesMiddleAnimationTL.play();
             },
             up() {
-                console.log('storyFeaturesTopFeaturesBottomAnimation_UP');
+                console.log('featuresTopFeaturesMiddleAnimation_UP');
+                this.featuresTopFeaturesMiddleAnimationTL.reverse();
+            }
+        },
+        featuresMiddleFeaturesBottomAnimation: {
+            featuresMiddleFeaturesBottomAnimationTL: gsap.timeline({paused: true})
+            .to('.features__img-wrapper', {y: '-160vh', duration: 1.8})
+            .to('.features__item-slogan--commitment', {y: '-160vh', duration: 1.6}, '-=1.4')
+            .to('.features__item-text--commitment', {y: '-160vh', duration: 2}, '-=2.3')
+            .to('.features__call', {y: '-160vh', duration: 1.4}, '-=2.1'),
+            // .to('.features', {y: '-290vh', duration: 1.4}, '-=1.4'),
+
+            down() {
+                console.log('featuresMiddleFeaturesBottomAnimation_DOWN');
+                this.featuresMiddleFeaturesBottomAnimationTL.play();
+            },
+            up() {
+                console.log('featuresMiddleFeaturesBottomAnimation_UP');
+                this.featuresMiddleFeaturesBottomAnimationTL.reverse();
             }
         },
         featuresBottomFactsAnimation: {
@@ -108,7 +138,10 @@ if (document.documentElement.clientWidth > 1200) {
                         screenSwitcher.storyFeaturesTopAnimation.down();
                         break;
                     case "featuresTop":
-                        screenSwitcher.storyFeaturesTopFeaturesBottomAnimation.down();
+                        screenSwitcher.featuresTopFeaturesMiddleAnimation.down();
+                        break;
+                    case "featuresMiddle":
+                        screenSwitcher.featuresMiddleFeaturesBottomAnimation.down();
                         break;
                     case "featuresBottom":
                         screenSwitcher.featuresBottomFactsAnimation.down();
@@ -141,7 +174,10 @@ if (document.documentElement.clientWidth > 1200) {
                         screenSwitcher.storyFeaturesTopAnimation.up();
                         break;
                     case "featuresTop":
-                        screenSwitcher.storyFeaturesTopFeaturesBottomAnimation.up();
+                        screenSwitcher.featuresTopFeaturesMiddleAnimation.up();
+                        break;
+                    case "featuresMiddle":
+                        screenSwitcher.featuresMiddleFeaturesBottomAnimation.up();
                         break;
                     case "featuresBottom":
                         screenSwitcher.featuresBottomFactsAnimation.up();
@@ -161,16 +197,3 @@ if (document.documentElement.clientWidth > 1200) {
         }
     });
 }
-
-
-
-
-
-// .fromTo('.features', {y: '-500vh'}, {y: '-200vh', duration: 2},'-=3')
-// .fromTo('.utterance', {opacity: 1}, {opacity: 0, duration: 1}, '-=2')
-// .to('.hero-story-wrapper', {y: '-200vh', duration: 0}, '-=1')
-// .fromTo('.features__bg-figure-1', {y: 0, opacity: 0}, {y: 0, opacity: 1, duration: 1}, '-=1')
-// .from('.features__item', {y: '300vh', duration: 1}, '-=2')
-// .from('.features__img', {y: '300vh', duration: 1}, '-=2')
-// .from('.features__call', {y: '300vh', duration: 1}, '-=2')
-// .from('.features__bg-figure-2', {y: '300vh', duration: 1}, '-=2')

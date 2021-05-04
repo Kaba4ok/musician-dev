@@ -3,12 +3,18 @@
     background-color: #C4CFC4;
     overflow: hidden;
 
+    &__figure-item-wrapper {
+        padding-top: 180px;
+        padding-bottom: 120px;
+    }
+
     &__item {
         display: flex;
         flex-direction: column;
 
         &--passion {
-            padding-bottom: 120px;
+            padding-top: 0;
+            padding-bottom: 0;
         }
 
         &--commitment {
@@ -67,6 +73,10 @@
         line-height: 50px;
         font-weight: 400;
         letter-spacing: 0em;
+    }
+
+    &__img-wrapper {
+        overflow: hidden;
     }
 
     &__img img {
