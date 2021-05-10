@@ -576,18 +576,18 @@ body {
   margin-bottom: 75px;
 }
 
-.header__sound-toggle {
-  position: relative;
-  padding: 0;
-  padding-right: 20px;
-  background: none;
-  border: none;
-  cursor: pointer;
+.header__sound-toggle-btn-close {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  width: 12px;
+  height: 12px;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
 }
 
-.header__sound-toggle::before,
-.header__sound-toggle::after {
-  content: "";
+.header__sound-toggle-btn-close span {
   position: absolute;
   right: 0;
   top: 50%;
@@ -596,16 +596,25 @@ body {
   background-color: #ffffff;
 }
 
-.header__sound-toggle::before {
+.header__sound-toggle-btn-close span:nth-child(1) {
   -webkit-transform: translateY(-50%) rotate(45deg);
   -ms-transform: translateY(-50%) rotate(45deg);
   transform: translateY(-50%) rotate(45deg);
 }
 
-.header__sound-toggle::after {
+.header__sound-toggle-btn-close span:nth-child(2) {
   -webkit-transform: translateY(-50%) rotate(-45deg);
   -ms-transform: translateY(-50%) rotate(-45deg);
   transform: translateY(-50%) rotate(-45deg);
+}
+
+.header__sound-toggle {
+  position: relative;
+  padding: 0;
+  padding-right: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
 }
 
 .header__sound-toggle-text {
@@ -629,7 +638,7 @@ body {
   padding-left: 45px;
 }
 
-.header__cta-icon {
+.header__cta-btn-icon {
   position: absolute;
   top: 50%;
   left: 0;
@@ -642,9 +651,7 @@ body {
   transform: translateY(-50%);
 }
 
-.header__cta-icon::before,
-.header__cta-icon::after {
-  content: "";
+.header__cta-btn-icon span {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -653,13 +660,13 @@ body {
   background-color: #000000;
 }
 
-.header__cta-icon::before {
+.header__cta-btn-icon span:nth-child(1) {
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
 
-.header__cta-icon::after {
+.header__cta-btn-icon span:nth-child(2) {
   -webkit-transform: translate(-50%, -50%) rotate(90deg);
   -ms-transform: translate(-50%, -50%) rotate(90deg);
   transform: translate(-50%, -50%) rotate(90deg);
@@ -963,14 +970,20 @@ body {
   letter-spacing: 0em;
 }
 
-.features__img-wrapper {
-  overflow: hidden;
+.features__img {
+  position: relative;
+  height: 100vh;
 }
 
 .features__img img {
+  position: absolute;
+  top: 0;
+  left: 0;
   display: block;
   width: 100%;
-  height: auto;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
 }
 
 .features__bg-figure-wrapper {
