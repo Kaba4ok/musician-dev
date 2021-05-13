@@ -1,5 +1,5 @@
 .header {
-    position: absolute;
+    position: fixed;
     left: 0;
     top: 0;
     width: 100%;
@@ -26,6 +26,18 @@
     &__logo {
         display: block;
         margin-bottom: 75px;
+
+        &:hover {
+            opacity: 0.7;
+        }
+
+        &:focus {
+            opacity: 0.7;
+        }
+
+        &:active {
+            opacity: 0.5;
+        }
     }
 
     &__sound-toggle-btn-close {
@@ -67,6 +79,18 @@
         opacity: 0.6;
     }
 
+    &__sound-toggle:hover &__sound-toggle-text {
+        opacity: 1;
+    }
+
+    &__sound-toggle:focus &__sound-toggle-text {
+        opacity: 1;
+    }
+
+    &__sound-toggle:active &__sound-toggle-text {
+        opacity: 0.5;
+    }
+
     &__btn {
         font-family: "IBM Plex Sans", Arial, sans-serif;
         font-size: 14px;
@@ -82,6 +106,42 @@
         position: relative;
         display: block;
         padding-left: 45px;
+
+        &:hover {
+            color: rgba($color: #ffffff, $alpha: 0.7);
+        }
+
+        &:focus {
+            color: rgba($color: #ffffff, $alpha: 0.7);
+        }
+
+        &:active {
+            color: rgba($color: #ffffff, $alpha: 0.5);
+        }
+    }
+
+    &__cta:hover &__cta-btn-icon {
+        background-color: rgba($color: #eb444a, $alpha: 1.0);
+
+        span {
+            background-color: #ffffff;
+        }
+    }
+
+    &__cta:focus &__cta-btn-icon {
+        background-color: rgba($color: #eb444a, $alpha: 1.0);
+
+        span {
+            background-color: #ffffff;
+        }
+    }
+
+    &__cta:active &__cta-btn-icon {
+        background-color: rgba($color: #eb444a, $alpha: 0.7);
+
+        span {
+            background-color: #ffffff;
+        }
     }
 
     &__cta-btn-icon {
@@ -109,6 +169,18 @@
             &:nth-child(2) {
                 transform: translate(-50%, -50%) rotate(90deg);
             }
+        }
+
+        &:hover {
+            background-color: rgba($color: #eb444a, $alpha: 1.0);
+        }
+
+        &:focus {
+            background-color: rgba($color: #eb444a, $alpha: 1.0);
+        }
+
+        &:active {
+            background-color: rgba($color: #eb444a, $alpha: 0.7);
         }
     }
 

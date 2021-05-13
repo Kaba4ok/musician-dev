@@ -49,6 +49,7 @@ const webp = require('gulp-webp');
 const fonter = require('gulp-fonter');
 const ttf2woff = require('gulp-ttf2woff');
 const ttf2woff2 = require('gulp-ttf2woff2');
+const babel = require('gulp-babel');
 
 
 function html() {
@@ -89,6 +90,9 @@ function css() {
 function js() {
     return src([path.src.js, `!${source_folder}/js/libs/*.js`])
         .pipe(plumber())
+        .pipe(babel({
+            presets: ['@babel/env']
+        }))
         .pipe(concat('main.js'))
         .pipe(dest(path.build.js))
         .pipe(browsersync.stream())

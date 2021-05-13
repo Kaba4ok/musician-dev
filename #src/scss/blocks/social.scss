@@ -13,6 +13,18 @@
         color: #ffffff;
         text-transform: uppercase;
         text-decoration: none;
+
+        &:hover {
+            color: #eb444a;
+        }
+
+        &:focus {
+            color: #eb444a;
+        }
+
+        &:active {
+            color: rgba($color: #eb444a, $alpha: 0.7);
+        }
     }
 
     &__item {
@@ -21,6 +33,7 @@
         &--tw {
             margin-right: 39px;
         }
+
         &--fb {
             margin-right: 27px;
         }

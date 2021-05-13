@@ -12,22 +12,30 @@
     overflow: hidden;
 }
 
+.input-visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+  }
+
 .nbsp {
     white-space: nowrap;
 }
 
-::-webkit-scrollbar {
-    width: 0px;
-    background: transparent;
-}
+//два правила ниже убирают скроллбар
 
-html {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-}
+// ::-webkit-scrollbar {
+//     width: 0px;
+//     background: transparent;
+// }
+// html {
+//     -ms-overflow-style: none;
+//     scrollbar-width: none;
+// }
 
 body {
-    overflow: hidden;
+    // overflow: hidden;
     background-color: black;
 }
 
@@ -51,8 +59,4 @@ body {
     @media screen and (max-width: 1360px) {
         padding: 0 20px;
     }
-}
-
-.hero-story-wrapper {
-    position: relative;
 }

@@ -48,7 +48,7 @@
                     </ul>
                 </div>
         
-                <a class="header__cta header__btn" href="#">
+                <a class="header__cta header__btn popup-link" href="#">
                     <div class="header__cta-btn-icon">
                         <span></span>
                         <span></span>
@@ -60,50 +60,47 @@
     </header>
     
     <main>
-        <div class="hero-story-wrapper">
-            <section class="hero">
-                <div class="hero__bg-layout">
+        <section class="hero">
+            <div class="hero__bg-layout">
+                <div class="container-large">
+                    <div class="hero__slogan-hashtag-wrapper">
+                        <p class="hero__slogan hero__text">Passion and Commitment.</p>
+                        <a class="hero__hashtag hero__text" href="#">#isakovMusic</a>
+                    </div>
+                </div>
+                <div class="hero__utterance utterance">
                     <div class="container-large">
-                        <div class="hero__slogan-hashtag-wrapper">
-                            <p class="hero__slogan hero__text">Passion and Commitment.</p>
-                            <a class="hero__hashtag hero__text" href="#">#isakovMusic</a>
+                        <div class="utterance__inner-wrapper">
+                            <p class="utterance__text">The better we <span class="utterance__text--important">learn music</span>, the bigger <span class="utterance__text--important">interest</span> we show.</p>
+                            <button class="utterance__scroll-btn">scroll.</button>
                         </div>
-                    </div>
-                </div>
-            </section>
-    
-            <section class="story">
-                <div class="story__bg-layout"></div>
-                <div class="container-large">
-                    <div class="story__inner-wrapper">
-    
-                        <div class="story__title-autor-wrapper">
-                            <h1 class="story__autor">Dmitriy Isakov</h1>
-                            <h2 class="story__title">My Story</h2>
-                        </div>
-    
-                        <div class="story__text-wrapper">
-                            <p class="story__text"><span class="story__text--not-italic">I grew up in</span><span class="story__text--white"> Ukraine,</span><span class="story__text--not-italic"> and started my way in music </span><span class="story__text--not-italic-white"> when I was 6.</span> I was lucky to perform music with great musicians, and learn from world known teachers.</p>
-    
-                            <p class="story__text">Graduate from <span class="story__text--white">Tchaikovskiy Conservatory in&nbsp;Kiev, Ukraine with Bachelor's and Master's&nbsp;degrees in Music Performance.</span></p>
-                        </div>
-    
-                        <svg class="story__bg-circle" width="480" height="480">
-                            <use xlink:href="./img/sprite.svg#my-story-bg-circle"></use>
-                        </svg>
-                    </div>
-                </div>
-            </section>
-
-            <div class="hero__utterance utterance">
-                <div class="container-large">
-                    <div class="utterance__inner-wrapper">
-                        <p class="utterance__text">The better we <span class="utterance__text--important">learn music</span>, the bigger <span class="utterance__text--important">interest</span> we show.</p>
-                        <button class="utterance__scroll-btn">scroll.</button>
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
+
+        <section class="story">
+            <div class="story__bg-layout"></div>
+            <div class="container-large">
+                <div class="story__inner-wrapper">
+
+                    <div class="story__title-autor-wrapper">
+                        <h1 class="story__autor">Dmitriy Isakov</h1>
+                        <h2 class="story__title">My Story</h2>
+                    </div>
+
+                    <div class="story__text-wrapper">
+                        <p class="story__text"><span class="story__text--not-italic">I grew up in</span><span class="story__text--white"> Ukraine,</span><span class="story__text--not-italic"> and started my way in music </span><span class="story__text--not-italic-white"> when I was 6.</span> I was lucky to perform music with great musicians, and learn from world known teachers.</p>
+
+                        <p class="story__text">Graduate from <span class="story__text--white">Tchaikovskiy Conservatory in&nbsp;Kiev, Ukraine with Bachelor's and Master's&nbsp;degrees in Music Performance.</span></p>
+                    </div>
+
+                    <svg class="story__bg-circle" width="480" height="480">
+                        <use xlink:href="./img/sprite.svg#my-story-bg-circle"></use>
+                    </svg>
+                </div>
+            </div>
+        </section>
 
         <section class="features">
             <div class="container">
@@ -123,7 +120,10 @@
                 </div>
 
                 <div class="features__img">
-                    <img src="./img/musician.jpg" alt="Dmitriy Isakov" width="1220" height="800">
+                    <picture>
+                        <source type="image/webp" srcset="img/musician@1x.webp 1x, img/musician@2x.webp 2x">
+                        <img src="./img/musician@1x.jpg" srcset="./img/musician@2x.jpg 2x" alt="Dmitriy Isakov" width="1220" height="800">
+                    </picture>
                 </div>
 
                 <div class="features__item features__item--commitment">
@@ -177,7 +177,7 @@
                     <li class="prices__item">
                         <p class="prices__cost">$88</p>
                         <p class="prices__name">4 lessons during 30 minuts</p>
-                        <a class="prices__choose-btn" href="#">
+                        <a class="prices__choose-btn popup-link" href="#">
                             <span class="prices__choose-btn-icon"></span>
                             choose
                         </a>
@@ -185,7 +185,7 @@
                     <li class="prices__item">
                         <p class="prices__cost">$135</p>
                         <p class="prices__name">4 lessons during 45 minuts</p>
-                        <a class="prices__choose-btn" href="#">
+                        <a class="prices__choose-btn popup-link" href="#">
                             <span class="prices__choose-btn-icon"></span>
                             choose
                         </a>
@@ -193,7 +193,7 @@
                     <li class="prices__item">
                         <p class="prices__cost">$180</p>
                         <p class="prices__name">4 lessons during 60 minuts</p>
-                        <a class="prices__choose-btn" href="#">
+                        <a class="prices__choose-btn prices__choose-btn--best popup-link" href="#">
                             <span class="prices__choose-btn-icon prices__choose-btn-icon--best"></span>
                             it could be your starting point
                         </a>
@@ -224,14 +224,21 @@
                             <span class="footer__call-part">music, my classes </span>
                             <span class="footer__call-part">are there for you.</span>
                         </p>
-                        <div class="footer__say-hello">
-                            <a href="#" class="footer__say-hello-link footer__say-hello-link--top">say hello</a>
-                            <a href="#" class="footer__say-hello-link footer__say-hello-link--right">say hello</a>
-                            <a href="#" class="footer__say-hello-link footer__say-hello-link--bottom">say hello</a>
-                            <a href="#" class="footer__say-hello-link footer__say-hello-link--left">say hello</a>
-                            <a href="#" class="footer__say-hello-link-btn"></a>
-                        </div>
+                        <a href="#" class="footer__say-hello popup-link">
+                            <span class="footer__say-hello-text footer__say-hello-text--top">say hello</span>
+                            <span class="footer__say-hello-text footer__say-hello-text--right">say hello</span>
+                            <span class="footer__say-hello-text footer__say-hello-text--bottom">say hello</span>
+                            <span class="footer__say-hello-text footer__say-hello-text--left">say hello</span>
+                            <span class="footer__say-hello-btn"></span>
+                        </a>
                     </div>
+                    <a class="footer__cta popup-link" href="#">
+                        <div class="footer__cta-icon">
+                            <span></span>
+                            <span></span>
+                        </div>
+                        Start your jorney
+                    </a>
                     <div class="footer__info">
                         <p class="footer__info-copyright">Copyrights © 2020 isakovmusic</p>
                         <p class="footer__info-site-owner">
@@ -242,10 +249,45 @@
             </div>
         </footer>
     </main>
+    
+    <form class="form form--hidden" action="#" method="post">
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
+        <button class="form__close" type="button"><span class="visually-hidden">Close form</span></button>
+
+        <div class="form__input-wrapper">
+            <label class="form__label" for="name"><span>Name</span></label>
+            <input class="form__text-input" type="text" id="name">
+        </div>
+
+        <div class="form__input-wrapper">
+            <label class="form__label" for="email"><span>Email</span></label>
+            <input class="form__text-input" type="email" id="email">
+        </div>
+
+        <div class="form__quantity">
+            <span class="form__label">Quantity of the lessons</span>
+            <div class="form__quantity-item-wrapper">
+                <input class="form__quantity-input visually-hidden input-visually-hidden" type="radio" name="quantity" value="30" id="30">
+                <label for="30" class="form__quantity-item">4x30min</label>
+                <input class="form__quantity-input visually-hidden input-visually-hidden" type="radio" name="quantity" value="45" id="45">
+                <label for="45" class="form__quantity-item">4x45min</label>
+                <input class="form__quantity-input visually-hidden input-visually-hidden" type="radio" name="quantity" value="60" id="60">
+                <label for="60" class="form__quantity-item">4x60min</label>
+            </div>
+        </div>
+
+        <div class="form__about-user">
+            <label class="form__label" for="about-user">Tell a little bit about <span class="form__label-italic">yourself</span></label>
+            <textarea class="form__textarea form__text-input" id="about-user"></textarea>
+        </div>
+
+        <button class="form__submit-btn" type="submit">start your jorney</button>
+    </form>
+
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script> -->
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/ScrollTrigger.min.js"></script> -->
     <script src="./js/main.js"></script>
+
 </body>
 
 </html>

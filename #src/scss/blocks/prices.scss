@@ -72,7 +72,7 @@
 
     &__choose-btn {
         position: relative;
-        display: block;
+        display: inline-block;
         padding-left: 45px;
         font-size: 14px;
         font-weight: 600;
@@ -81,6 +81,32 @@
         color: #ffffff;
         text-decoration: none;
         text-transform: uppercase;
+
+        &:hover {
+            color: rgba($color: #ffffff, $alpha: 0.7);
+        }
+
+        &:focus {
+            color: rgba($color: #ffffff, $alpha: 0.7);
+        }
+
+        &:active {
+            color: rgba($color: #ffffff, $alpha: 0.5);
+        }
+
+        &--best {
+            &:hover {
+                color: rgba($color: #EB444A, $alpha: 1.0);
+            }
+
+            &:focus {
+                color: rgba($color: #EB444A, $alpha: 1.0);
+            }
+
+            &:active {
+                color: rgba($color: #EB444A, $alpha: 0.7);
+            }
+        }
     }
 
     &__choose-btn-icon {
@@ -93,10 +119,6 @@
         background-color: #ffffff;
         border-radius: 50%;
         transform: translateY(-50%);
-
-        &--best {
-            background-color: #EB444A;
-        }
 
         &::before,
         &::after {
@@ -120,6 +142,64 @@
         &--best::before,
         &--best::after {
             background-color: #ffffff;
+        }
+
+        &--best {
+            background-color: #EB444A;
+        }
+    }
+
+    &__choose-btn:hover &__choose-btn-icon {
+        background-color: rgba($color: #eb444a, $alpha: 1.0);
+
+        &::before,
+        &::after {
+            background-color: #ffffff;
+        }
+    }
+
+    &__choose-btn:focus &__choose-btn-icon {
+        background-color: rgba($color: #eb444a, $alpha: 1.0);
+
+        &::before,
+        &::after {
+            background-color: #ffffff;
+        }
+    }
+
+    &__choose-btn:active &__choose-btn-icon {
+        background-color: rgba($color: #eb444a, $alpha: 0.7);
+
+        &::before,
+        &::after {
+            background-color: #ffffff;
+        }
+    }
+
+    &__choose-btn--best:hover &__choose-btn-icon {
+        background-color: rgba($color: #ffffff, $alpha: 1);
+
+        &::before,
+        &::after {
+            background-color: #000000;
+        }
+    }
+
+    &__choose-btn--best:focus &__choose-btn-icon {
+        background-color: rgba($color: #ffffff, $alpha: 1);
+
+        &::before,
+        &::after {
+            background-color: #000000;
+        }
+    }
+
+    &__choose-btn--best:active &__choose-btn-icon {
+        background-color: rgba($color: #ffffff, $alpha: 0.7);
+
+        &::before,
+        &::after {
+            background-color: #000000;
         }
     }
 
