@@ -4,7 +4,8 @@ const form = document.querySelector('.form');
 const popupLinks = document.querySelectorAll('.popup-link');
 const formCloseBtn = form.querySelector('.form__close');
 
-function showPopup() {
+function showPopup(evt) {
+    evt.preventDefault();
     form.classList.remove('form--hidden');
 }
 
@@ -42,45 +43,98 @@ function testWebP(callback) {
 
 // ---------------------------------------------------------------
 
-// const heroStoryTL = gsap.timeline();
+if (document.documentElement.clientWidth > 1200) {
+    
+    const heroStoryTL = gsap.timeline();
+    heroStoryTL.to('.header__logo-music-toggle-wrapper', {y: -95, duration: 2});
+    heroStoryTL.to('.social', {y: -200, duration: 2}, '-=2');
+    heroStoryTL.to('.hero__slogan', {x: -200, opacity: 0, duration: 2}, '-=2');
+    heroStoryTL.to('.hero__hashtag', {x: 200, opacity: 0, duration: 2}, '-=2');
+    heroStoryTL.to('.utterance', {opacity: 0, duration: 1}, '-=2');
 
-// heroStoryTL.to('.header__logo-music-toggle-wrapper', {y: -95, duration: 2});
-// heroStoryTL.to('.social', {y: -200, duration: 2}, '-=2');
-// heroStoryTL.to('.hero__slogan', {x: -200, opacity: 0, duration: 2}, '-=2');
-// heroStoryTL.to('.hero__hashtag', {x: 200, opacity: 0, duration: 2}, '-=2');
-// heroStoryTL.to('.utterance', {opacity: 0, duration: 1}, '-=2');
+    ScrollTrigger.create({
+        animation: heroStoryTL,
+        trigger: '.hero',
+        start: 'top top',
+        scrub: true,
+    });
 
-// ScrollTrigger.create({
-//     animation: heroStoryTL,
-//     trigger: '.hero',
-//     start: '60%',
-//     end: '100%',
-//     scrub: true,
-//     pin: true
-// });
+    const storyTL = gsap.timeline();
+    storyTL.from('.story__title-autor-wrapper', {y: 100, opacity: 0, duration: 2});
+    storyTL.from('.story__text-wrapper', {y: 100, opacity: 0, duration: 2}, '-=1.5');
 
-// const storyTL = gsap.timeline();
-// storyTL.from('.story__title-autor-wrapper', {y: 100, opacity: 0, duration: 1});
-// storyTL.from('.story__text-wrapper', {y: 100, opacity: 0, duration: 1.5}, '-=1');
+    ScrollTrigger.create({
+        animation: storyTL,
+        trigger: '.hero',
+        start: '70%',
+        scrub: true,
+    });
 
-// ScrollTrigger.create({
-//     animation: storyTL,
-//     trigger: '.hero',
-//     start: '50%',
-//     end: '100%',
-//     scrub: true,
-//     pin: true
-// });
+    const featuresTopTL = gsap.timeline();
+    featuresTopTL.from('.features__figure-item-wrapper', {y: 100, opacity: 0, duration: 1});
+    featuresTopTL.from('.story__text-wrapper', {y: 100, opacity: 0, duration: 1.5}, '-=1');
 
-// const featuresTL = gsap.timeline();
-// featuresTL.from('.features__figure-item-wrapper', {y: 100, opacity: 0, duration: 1});
-// // featuresTL.from('.story__text-wrapper', {y: 100, opacity: 0, duration: 1.5}, '-=1');
+    ScrollTrigger.create({
+        animation: featuresTopTL,
+        trigger: '.story',
+        start: '60%',
+        scrub: true,
+    });
 
-// ScrollTrigger.create({
-//     animation: featuresTL,
-//     trigger: '.story',
-//     start: '70%',
-//     end: '100%',
-//     scrub: true,
-//     pin: true
-// });
+    const featuresBottomTL = gsap.timeline();
+    featuresBottomTL.from('.features__item-slogan--commitment', {y: 100, opacity: 0, duration: 1});
+    featuresBottomTL.from('.features__item-text--commitment', {y: 100, opacity: 0, duration: 1.5}, '-=1');
+    featuresBottomTL.from('.features__call', {y: 100, opacity: 0, duration: 1.5}, '-=1');
+
+    ScrollTrigger.create({
+        animation: featuresBottomTL,
+        trigger: '.features__img',
+        start: '50%',
+        scrub: true,
+    });
+
+    const factsTL = gsap.timeline();
+    factsTL.from('.facts__title', {y: 100, opacity: 0, duration: 1});
+    factsTL.from('.facts__list-wrapper', {y: 100, opacity: 0, duration: 1.5}, '-=1');
+
+    ScrollTrigger.create({
+        animation: factsTL,
+        trigger: '.features',
+        start: '75%',
+        scrub: true,
+    });
+
+    const pricesTL = gsap.timeline();
+    pricesTL.from('.prices__title', {y: 100, opacity: 0, duration: 1});
+    pricesTL.from('.prices__offer', {y: 100, opacity: 0, duration: 1.5}, '-=1');
+    pricesTL.from('.prices__list', {y: 100, opacity: 0, duration: 1.5}, '-=1');
+
+    ScrollTrigger.create({
+        animation: pricesTL,
+        trigger: '.features',
+        start: '90%',
+        scrub: true,
+    });
+
+    const footerTopTL = gsap.timeline();
+    footerTopTL.from('.footer__nav', {x: -100, opacity: 0, duration: 1});
+    footerTopTL.from('.footer__social', {x: 100, opacity: 0, duration: 1.5}, '-=1');
+
+    ScrollTrigger.create({
+        animation: footerTopTL,
+        trigger: '.facts',
+        start: '60%',
+        scrub: true,
+    });
+
+    const footerBottomTL = gsap.timeline();
+    footerBottomTL.from('.footer__call', {y: 100, opacity: 0, duration: 1});
+    footerBottomTL.from('.footer__say-hello', {y: 100, opacity: 0, duration: 1.5}, '-=1');
+
+    ScrollTrigger.create({
+        animation: footerBottomTL,
+        trigger: '.prices',
+        start: '40%',
+        scrub: true,
+    });
+}

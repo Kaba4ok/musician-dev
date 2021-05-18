@@ -458,7 +458,7 @@ template {
 }
 
 body {
-  background-color: black;
+  overflow-x: hidden;
 }
 
 .container-large {
@@ -550,7 +550,7 @@ body {
 }
 
 .header {
-  position: fixed;
+  position: absolute;
   left: 0;
   top: 0;
   width: 100%;
