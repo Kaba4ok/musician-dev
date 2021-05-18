@@ -68,10 +68,9 @@
 
     &__sound-toggle {
         position: relative;
+        display: inline-block;
         padding: 0;
         padding-right: 20px;
-        background: none;
-        border: none;
         cursor: pointer;
     }
 

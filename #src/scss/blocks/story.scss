@@ -61,16 +61,16 @@
         letter-spacing: 0em;
         color: #c4c4c4;
 
-        &--white {
+        &-white {
             color: white;
         }
 
-        &--not-italic {
+        &-not-italic {
             font-style: normal;
             font-weight: 400;
         }
 
-        &--not-italic-white {
+        &-not-italic-white {
             font-style: normal;
             font-weight: 400;
             color: white;
