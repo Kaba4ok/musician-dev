@@ -96,7 +96,11 @@
         }
     }
 
-    @media (max-width: 930px) {
+    @media (max-width: 1000px) {
+
+        &__inner-wrapper {
+            padding-top: 150px;
+        }
 
         &__title-autor-wrapper {
             padding-left: 30px;
@@ -114,10 +118,6 @@
     @media (max-width: 768px) {
         height: auto;
         padding-bottom: 50px;
-
-        &__inner-wrapper {
-            padding-top: 150px;
-        }
 
         &__title-autor-wrapper {
             padding-left: 0px;

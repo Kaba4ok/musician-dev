@@ -108,6 +108,11 @@
 
     @media (max-width: 768px) {
 
+        &__figure-item-wrapper {
+            padding-top: 70px;
+            padding-bottom: 50px;
+        }
+
         &__item--passion {
             padding-bottom: 50px;
         }

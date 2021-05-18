@@ -21,6 +21,43 @@ formCloseBtn.addEventListener('click', closePopup);
 
 // ---------------------------------------------------------------
 
+const storyHeaderLink = document.querySelector('.nav__link--story');
+const factsHeaderLink = document.querySelector('.nav__link--facts');
+const pricesHeaderLink = document.querySelector('.nav__link--prices');
+
+const storyFooterLink = document.querySelector('.footer__nav-link--story');
+const factsFooterLink = document.querySelector('.footer__nav-link--facts');
+const pricesFooterLink = document.querySelector('.footer__nav-link--prices');
+
+const storyBlock = document.querySelector('.story');
+const factsBlock = document.querySelector('.facts');
+const pricesBlock = document.querySelector('.prices');
+
+const toStoryScroll = function (evt) {
+    evt.preventDefault();
+    storyBlock.scrollIntoView({block: "start", behavior: "smooth"});
+}
+
+const toFactsScroll = function (evt) {
+    evt.preventDefault();
+    factsBlock.scrollIntoView({block: "start", behavior: "smooth"});
+}
+
+const toPricesScroll = function (evt) {
+    evt.preventDefault();
+    pricesBlock.scrollIntoView({block: "start", behavior: "smooth"});
+}
+
+storyHeaderLink.addEventListener('click', toStoryScroll);
+factsHeaderLink.addEventListener('click', toFactsScroll);
+pricesHeaderLink.addEventListener('click', toPricesScroll);
+
+storyFooterLink.addEventListener('click', toStoryScroll);
+factsFooterLink.addEventListener('click', toFactsScroll);
+pricesFooterLink.addEventListener('click', toPricesScroll);
+
+// ---------------------------------------------------------------
+
 // функция для проверки возможности использования webp-изображений фоном
 
 function testWebP(callback) {
@@ -34,30 +71,29 @@ function testWebP(callback) {
     
     testWebP(function (support) {
     
-    if (support == true) {
-    document.querySelector('body').classList.add('webp');
-    }else{
-    document.querySelector('body').classList.add('no-webp');
-    }
+        if (support == true) {
+            document.querySelector('body').classList.add('webp');
+        } else{
+            document.querySelector('body').classList.add('no-webp');
+        }
     });
 
 // ---------------------------------------------------------------
 
 if (document.documentElement.clientWidth > 1200) {
-    
-    const heroStoryTL = gsap.timeline();
-    heroStoryTL.to('.header__logo-music-toggle-wrapper', {y: -95, duration: 2});
-    heroStoryTL.to('.social', {y: -200, duration: 2}, '-=2');
-    heroStoryTL.to('.hero__slogan', {x: -200, opacity: 0, duration: 2}, '-=2');
-    heroStoryTL.to('.hero__hashtag', {x: 200, opacity: 0, duration: 2}, '-=2');
-    heroStoryTL.to('.utterance', {opacity: 0, duration: 1}, '-=2');
 
-    ScrollTrigger.create({
-        animation: heroStoryTL,
-        trigger: '.hero',
-        start: 'top top',
-        scrub: true,
-    });
+    // const heroStoryTL = gsap.timeline();
+    // heroStoryTL.to('.header__logo-music-toggle-wrapper', {y: -95, duration: 2});
+    // heroStoryTL.to('.social', {y: -200, duration: 2}, '-=2');
+    // heroStoryTL.to('.hero__slogan', {x: -200, opacity: 0, duration: 2}, '-=2');
+    // heroStoryTL.to('.hero__hashtag', {x: 200, opacity: 0, duration: 2}, '-=2');
+    // heroStoryTL.to('.utterance', {opacity: 0, duration: 1}, '-=2');
+
+    // ScrollTrigger.create({
+    //     animation: heroStoryTL,
+    //     trigger: '.hero',
+    //     start: 'top top',
+    // });
 
     const storyTL = gsap.timeline();
     storyTL.from('.story__title-autor-wrapper', {y: 100, opacity: 0, duration: 2});
@@ -67,18 +103,16 @@ if (document.documentElement.clientWidth > 1200) {
         animation: storyTL,
         trigger: '.hero',
         start: '70%',
-        scrub: true,
     });
 
     const featuresTopTL = gsap.timeline();
     featuresTopTL.from('.features__figure-item-wrapper', {y: 100, opacity: 0, duration: 1});
-    featuresTopTL.from('.story__text-wrapper', {y: 100, opacity: 0, duration: 1.5}, '-=1');
+    // featuresTopTL.from('.story__text-wrapper', {y: 100, opacity: 0, duration: 1.5}, '-=1');
 
     ScrollTrigger.create({
         animation: featuresTopTL,
         trigger: '.story',
         start: '60%',
-        scrub: true,
     });
 
     const featuresBottomTL = gsap.timeline();
@@ -90,7 +124,6 @@ if (document.documentElement.clientWidth > 1200) {
         animation: featuresBottomTL,
         trigger: '.features__img',
         start: '50%',
-        scrub: true,
     });
 
     const factsTL = gsap.timeline();
@@ -101,7 +134,6 @@ if (document.documentElement.clientWidth > 1200) {
         animation: factsTL,
         trigger: '.features',
         start: '75%',
-        scrub: true,
     });
 
     const pricesTL = gsap.timeline();
@@ -113,7 +145,6 @@ if (document.documentElement.clientWidth > 1200) {
         animation: pricesTL,
         trigger: '.features',
         start: '90%',
-        scrub: true,
     });
 
     const footerTopTL = gsap.timeline();
@@ -124,7 +155,6 @@ if (document.documentElement.clientWidth > 1200) {
         animation: footerTopTL,
         trigger: '.facts',
         start: '60%',
-        scrub: true,
     });
 
     const footerBottomTL = gsap.timeline();
@@ -135,6 +165,5 @@ if (document.documentElement.clientWidth > 1200) {
         animation: footerBottomTL,
         trigger: '.prices',
         start: '40%',
-        scrub: true,
     });
 }
