@@ -1,0 +1,19 @@
+.popup {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba($color: #000000, $alpha: 0.7);
+    z-index: 9;
+    transition-property: width;
+    transition-duration: 1s;
+    transition-timing-function: ease-in-out;
+
+    &--hidden {
+        width: 0;
+        transition-property: width;
+        transition-duration: 1s;
+        transition-timing-function: ease-in-out;
+    }
+}

@@ -3,14 +3,23 @@
 const form = document.querySelector('.form');
 const popupLinks = document.querySelectorAll('.popup-link');
 const formCloseBtn = form.querySelector('.form__close');
+const popup = document.querySelector('.popup');
+
+let bodyWidthBeforePopupOpen = document.body.clientWidth;
 
 function showPopup(evt) {
     evt.preventDefault();
     form.classList.remove('form--hidden');
+    popup.classList.remove('popup--hidden');
+    document.body.style.overflow='hidden';
+    document.body.style.paddingRight = document.body.clientWidth - bodyWidthBeforePopupOpen + 'px';
 }
 
 function closePopup() {
     form.classList.add('form--hidden');
+    popup.classList.add('popup--hidden');
+    document.body.style.overflow='auto';
+    document.body.style.paddingRight = '0px';
 }
 
 popupLinks.forEach((link) => {
@@ -24,6 +33,8 @@ formCloseBtn.addEventListener('click', closePopup);
 const storyHeaderLink = document.querySelector('.nav__link--story');
 const factsHeaderLink = document.querySelector('.nav__link--facts');
 const pricesHeaderLink = document.querySelector('.nav__link--prices');
+
+const heroScrollBtn = document.querySelector('.utterance__scroll-btn');
 
 const storyFooterLink = document.querySelector('.footer__nav-link--story');
 const factsFooterLink = document.querySelector('.footer__nav-link--facts');
@@ -51,6 +62,8 @@ const toPricesScroll = function (evt) {
 storyHeaderLink.addEventListener('click', toStoryScroll);
 factsHeaderLink.addEventListener('click', toFactsScroll);
 pricesHeaderLink.addEventListener('click', toPricesScroll);
+
+heroScrollBtn.addEventListener('click', toStoryScroll);
 
 storyFooterLink.addEventListener('click', toStoryScroll);
 factsFooterLink.addEventListener('click', toFactsScroll);
@@ -82,18 +95,25 @@ function testWebP(callback) {
 
 if (document.documentElement.clientWidth > 1200) {
 
-    // const heroStoryTL = gsap.timeline();
-    // heroStoryTL.to('.header__logo-music-toggle-wrapper', {y: -95, duration: 2});
-    // heroStoryTL.to('.social', {y: -200, duration: 2}, '-=2');
-    // heroStoryTL.to('.hero__slogan', {x: -200, opacity: 0, duration: 2}, '-=2');
-    // heroStoryTL.to('.hero__hashtag', {x: 200, opacity: 0, duration: 2}, '-=2');
-    // heroStoryTL.to('.utterance', {opacity: 0, duration: 1}, '-=2');
+    function heroAnimation() {
+        const heroStoryTL = gsap.timeline();
+        heroStoryTL.from('.header__logo-music-toggle-wrapper', {
+            y: function(index, target) {
+                const elem = target.getBoundingClientRect();
+                return -(elem.y + elem.height);
+            }, duration: 1.5});
+        heroStoryTL.from('.header__cta', {y: -100, duration: 1.5}, '-=1.5');
+        heroStoryTL.from('.header__nav-social-wrapper', {
+            y: function(index, target) {
+                const elem = target.getBoundingClientRect();
+                return -(elem.y + elem.height);
+            }, duration: 1.5}, '-=1.5');
+        heroStoryTL.from('.hero__slogan', {x: -200, opacity: 0, duration: 1.5}, '-=1.5');
+        heroStoryTL.from('.hero__hashtag', {x: 200, opacity: 0, duration: 1.5}, '-=1.5');
+        heroStoryTL.from('.utterance', {opacity: 0, duration: 2.5}, '-=1.5');
+    };
 
-    // ScrollTrigger.create({
-    //     animation: heroStoryTL,
-    //     trigger: '.hero',
-    //     start: 'top top',
-    // });
+    document.addEventListener("DOMContentLoaded", heroAnimation);
 
     const storyTL = gsap.timeline();
     storyTL.from('.story__title-autor-wrapper', {y: 100, opacity: 0, duration: 2});

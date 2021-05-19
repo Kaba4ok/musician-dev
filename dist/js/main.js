@@ -3,14 +3,22 @@
 var form = document.querySelector('.form');
 var popupLinks = document.querySelectorAll('.popup-link');
 var formCloseBtn = form.querySelector('.form__close');
+var popup = document.querySelector('.popup');
+var bodyWidthBeforePopupOpen = document.body.clientWidth;
 
 function showPopup(evt) {
   evt.preventDefault();
   form.classList.remove('form--hidden');
+  popup.classList.remove('popup--hidden');
+  document.body.style.overflow = 'hidden';
+  document.body.style.paddingRight = document.body.clientWidth - bodyWidthBeforePopupOpen + 'px';
 }
 
 function closePopup() {
   form.classList.add('form--hidden');
+  popup.classList.add('popup--hidden');
+  document.body.style.overflow = 'auto';
+  document.body.style.paddingRight = '0px';
 }
 
 popupLinks.forEach(function (link) {
@@ -21,6 +29,7 @@ formCloseBtn.addEventListener('click', closePopup); // -------------------------
 var storyHeaderLink = document.querySelector('.nav__link--story');
 var factsHeaderLink = document.querySelector('.nav__link--facts');
 var pricesHeaderLink = document.querySelector('.nav__link--prices');
+var heroScrollBtn = document.querySelector('.utterance__scroll-btn');
 var storyFooterLink = document.querySelector('.footer__nav-link--story');
 var factsFooterLink = document.querySelector('.footer__nav-link--facts');
 var pricesFooterLink = document.querySelector('.footer__nav-link--prices');
@@ -55,6 +64,7 @@ var toPricesScroll = function toPricesScroll(evt) {
 storyHeaderLink.addEventListener('click', toStoryScroll);
 factsHeaderLink.addEventListener('click', toFactsScroll);
 pricesHeaderLink.addEventListener('click', toPricesScroll);
+heroScrollBtn.addEventListener('click', toStoryScroll);
 storyFooterLink.addEventListener('click', toStoryScroll);
 factsFooterLink.addEventListener('click', toFactsScroll);
 pricesFooterLink.addEventListener('click', toPricesScroll); // ---------------------------------------------------------------
@@ -79,17 +89,44 @@ testWebP(function (support) {
 }); // ---------------------------------------------------------------
 
 if (document.documentElement.clientWidth > 1200) {
-  // const heroStoryTL = gsap.timeline();
-  // heroStoryTL.to('.header__logo-music-toggle-wrapper', {y: -95, duration: 2});
-  // heroStoryTL.to('.social', {y: -200, duration: 2}, '-=2');
-  // heroStoryTL.to('.hero__slogan', {x: -200, opacity: 0, duration: 2}, '-=2');
-  // heroStoryTL.to('.hero__hashtag', {x: 200, opacity: 0, duration: 2}, '-=2');
-  // heroStoryTL.to('.utterance', {opacity: 0, duration: 1}, '-=2');
-  // ScrollTrigger.create({
-  //     animation: heroStoryTL,
-  //     trigger: '.hero',
-  //     start: 'top top',
-  // });
+  var heroAnimation = function heroAnimation() {
+    var heroStoryTL = gsap.timeline();
+    heroStoryTL.from('.header__logo-music-toggle-wrapper', {
+      y: function y(index, target) {
+        var elem = target.getBoundingClientRect();
+        return -(elem.y + elem.height);
+      },
+      duration: 1.5
+    });
+    heroStoryTL.from('.header__cta', {
+      y: -100,
+      duration: 1.5
+    }, '-=1.5');
+    heroStoryTL.from('.header__nav-social-wrapper', {
+      y: function y(index, target) {
+        var elem = target.getBoundingClientRect();
+        return -(elem.y + elem.height);
+      },
+      duration: 1.5
+    }, '-=1.5');
+    heroStoryTL.from('.hero__slogan', {
+      x: -200,
+      opacity: 0,
+      duration: 1.5
+    }, '-=1.5');
+    heroStoryTL.from('.hero__hashtag', {
+      x: 200,
+      opacity: 0,
+      duration: 1.5
+    }, '-=1.5');
+    heroStoryTL.from('.utterance', {
+      opacity: 0,
+      duration: 2.5
+    }, '-=1.5');
+  };
+
+  ;
+  document.addEventListener("DOMContentLoaded", heroAnimation);
   var storyTL = gsap.timeline();
   storyTL.from('.story__title-autor-wrapper', {
     y: 100,

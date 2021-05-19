@@ -9,6 +9,7 @@
 </head>
 
 <body>
+    <h1 class="visually-hidden">Dmitriy Isakov</h1>
     <header class="header">
         <div class="container-large">
             <div class="header__inner-wrapper">
@@ -64,7 +65,7 @@
             <div class="hero__bg-layout">
                 <div class="container-large">
                     <div class="hero__slogan-hashtag-wrapper">
-                        <h1 class="visually-hidden">Dmitriy Isakov</h1>
+                        <h2 class="visually-hidden">Dmitriy Isakov</h2>
                         <p class="hero__slogan hero__text">Passion and Commitment.</p>
                         <a class="hero__hashtag hero__text" href="#">#isakovMusic</a>
                     </div>
@@ -255,39 +256,41 @@
         </footer>
     </main>
     
-    <form class="form form--hidden" action="#" method="post">
+    <section class="popup popup--hidden">
+        <form class="popup__form form form--hidden" action="#" method="post">
 
-        <button class="form__close" type="button"><span class="visually-hidden">Close form</span></button>
-
-        <div class="form__input-wrapper">
-            <label class="form__label" for="name"><span>Name</span></label>
-            <input class="form__text-input" type="text" id="name">
-        </div>
-
-        <div class="form__input-wrapper">
-            <label class="form__label" for="email"><span>Email</span></label>
-            <input class="form__text-input" type="email" id="email">
-        </div>
-
-        <div class="form__quantity">
-            <span class="form__label">Quantity of the lessons</span>
-            <div class="form__quantity-item-wrapper">
-                <input class="form__quantity-input visually-hidden input-visually-hidden" type="radio" name="quantity" value="30" id="30">
-                <label for="30" class="form__quantity-item">4x30min</label>
-                <input class="form__quantity-input visually-hidden input-visually-hidden" type="radio" name="quantity" value="45" id="45">
-                <label for="45" class="form__quantity-item">4x45min</label>
-                <input class="form__quantity-input visually-hidden input-visually-hidden" type="radio" name="quantity" value="60" id="60">
-                <label for="60" class="form__quantity-item">4x60min</label>
+            <button class="form__close" type="button"><span class="visually-hidden">Close form</span></button>
+    
+            <div class="form__input-wrapper">
+                <label class="form__label" for="name"><span>Name</span></label>
+                <input class="form__text-input" type="text" id="name">
             </div>
-        </div>
-
-        <div class="form__about-user">
-            <label class="form__label" for="about-user">Tell a little bit about <span class="form__label-italic">yourself</span></label>
-            <textarea class="form__textarea form__text-input" id="about-user"></textarea>
-        </div>
-
-        <button class="form__submit-btn" type="submit">start your jorney</button>
-    </form>
+    
+            <div class="form__input-wrapper">
+                <label class="form__label" for="email"><span>Email</span></label>
+                <input class="form__text-input" type="email" id="email">
+            </div>
+    
+            <div class="form__quantity">
+                <span class="form__label">Quantity of the lessons</span>
+                <div class="form__quantity-item-wrapper">
+                    <input class="form__quantity-input visually-hidden input-visually-hidden" type="radio" name="quantity" value="30" id="30">
+                    <label for="30" class="form__quantity-item">4x30min</label>
+                    <input class="form__quantity-input visually-hidden input-visually-hidden" type="radio" name="quantity" value="45" id="45">
+                    <label for="45" class="form__quantity-item">4x45min</label>
+                    <input class="form__quantity-input visually-hidden input-visually-hidden" type="radio" name="quantity" value="60" id="60">
+                    <label for="60" class="form__quantity-item">4x60min</label>
+                </div>
+            </div>
+    
+            <div class="form__about-user">
+                <label class="form__label" for="about-user">Tell a little bit about <span class="form__label-italic">yourself</span></label>
+                <textarea class="form__textarea form__text-input" id="about-user"></textarea>
+            </div>
+    
+            <button class="form__submit-btn" type="submit">start your jorney</button>
+        </form>
+    </section>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/ScrollTrigger.min.js"></script>
