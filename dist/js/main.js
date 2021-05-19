@@ -4,27 +4,23 @@ var form = document.querySelector('.form');
 var popupLinks = document.querySelectorAll('.popup-link');
 var formCloseBtn = form.querySelector('.form__close');
 var popup = document.querySelector('.popup');
-var bodyWidthBeforePopupOpen = document.body.clientWidth;
 
 function showPopup(evt) {
   evt.preventDefault();
   form.classList.remove('form--hidden');
   popup.classList.remove('popup--hidden');
-  document.body.style.overflow = 'hidden';
-  document.body.style.paddingRight = document.body.clientWidth - bodyWidthBeforePopupOpen + 'px';
 }
 
 function closePopup() {
   form.classList.add('form--hidden');
   popup.classList.add('popup--hidden');
-  document.body.style.overflow = 'auto';
-  document.body.style.paddingRight = '0px';
 }
 
 popupLinks.forEach(function (link) {
   link.addEventListener('click', showPopup);
 });
-formCloseBtn.addEventListener('click', closePopup); // ---------------------------------------------------------------
+formCloseBtn.addEventListener('click', closePopup);
+popup.addEventListener('click', closePopup); // ---------------------------------------------------------------
 
 var storyHeaderLink = document.querySelector('.nav__link--story');
 var factsHeaderLink = document.querySelector('.nav__link--facts');
@@ -236,6 +232,7 @@ if (document.documentElement.clientWidth > 1200) {
     duration: 1
   });
   footerBottomTL.from('.footer__say-hello', {
+    rotate: 360,
     y: 100,
     opacity: 0,
     duration: 1.5

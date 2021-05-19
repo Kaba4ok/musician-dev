@@ -5,21 +5,15 @@ const popupLinks = document.querySelectorAll('.popup-link');
 const formCloseBtn = form.querySelector('.form__close');
 const popup = document.querySelector('.popup');
 
-let bodyWidthBeforePopupOpen = document.body.clientWidth;
-
 function showPopup(evt) {
     evt.preventDefault();
     form.classList.remove('form--hidden');
     popup.classList.remove('popup--hidden');
-    document.body.style.overflow='hidden';
-    document.body.style.paddingRight = document.body.clientWidth - bodyWidthBeforePopupOpen + 'px';
 }
 
 function closePopup() {
     form.classList.add('form--hidden');
     popup.classList.add('popup--hidden');
-    document.body.style.overflow='auto';
-    document.body.style.paddingRight = '0px';
 }
 
 popupLinks.forEach((link) => {
@@ -27,6 +21,8 @@ popupLinks.forEach((link) => {
 });
 
 formCloseBtn.addEventListener('click', closePopup);
+
+popup.addEventListener('click', closePopup);
 
 // ---------------------------------------------------------------
 
@@ -179,7 +175,7 @@ if (document.documentElement.clientWidth > 1200) {
 
     const footerBottomTL = gsap.timeline();
     footerBottomTL.from('.footer__call', {y: 100, opacity: 0, duration: 1});
-    footerBottomTL.from('.footer__say-hello', {y: 100, opacity: 0, duration: 1.5}, '-=1');
+    footerBottomTL.from('.footer__say-hello', {rotate: 360, y: 100, opacity: 0, duration: 1.5}, '-=1');
 
     ScrollTrigger.create({
         animation: footerBottomTL,
