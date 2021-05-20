@@ -5,6 +5,7 @@ var popupLinks = document.querySelectorAll('.popup-link');
 var formCloseBtn = form.querySelector('.form__close');
 var popup = document.querySelector('.popup');
 var header = document.querySelector('.header');
+var inputName = form.querySelector('#name');
 var beforePopup = document.body.offsetWidth;
 
 function showPopup(evt) {
@@ -14,6 +15,7 @@ function showPopup(evt) {
   document.body.style.overflowY = 'hidden';
   document.body.style.paddingRight = document.body.offsetWidth - beforePopup + 'px';
   header.style.paddingRight = document.body.offsetWidth - beforePopup + 'px';
+  inputName.focus();
 }
 
 function closePopup() {
@@ -30,7 +32,17 @@ popupLinks.forEach(function (link) {
   link.addEventListener('click', showPopup);
 });
 formCloseBtn.addEventListener('click', closePopup);
-popup.addEventListener('click', closePopup); // ---------------------------------------------------------------
+popup.addEventListener('click', function (evt) {
+  if (evt.target === popup) {
+    closePopup();
+  }
+});
+document.addEventListener("keydown", function (evt) {
+  if (evt.key === 'Escape') {
+    evt.preventDefault();
+    closePopup();
+  }
+}); // ---------------------------------------------------------------
 
 var storyHeaderLink = document.querySelector('.nav__link--story');
 var factsHeaderLink = document.querySelector('.nav__link--facts');
@@ -242,8 +254,6 @@ if (document.documentElement.clientWidth > 1200) {
     duration: 1
   });
   footerBottomTL.from('.footer__say-hello', {
-    rotate: 360,
-    y: 100,
     opacity: 0,
     duration: 1.5
   }, '-=1');
