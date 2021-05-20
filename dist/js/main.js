@@ -4,16 +4,26 @@ var form = document.querySelector('.form');
 var popupLinks = document.querySelectorAll('.popup-link');
 var formCloseBtn = form.querySelector('.form__close');
 var popup = document.querySelector('.popup');
+var header = document.querySelector('.header');
+var beforePopup = document.body.offsetWidth;
 
 function showPopup(evt) {
   evt.preventDefault();
   form.classList.remove('form--hidden');
   popup.classList.remove('popup--hidden');
+  document.body.style.overflowY = 'hidden';
+  document.body.style.paddingRight = document.body.offsetWidth - beforePopup + 'px';
+  header.style.paddingRight = document.body.offsetWidth - beforePopup + 'px';
 }
 
 function closePopup() {
   form.classList.add('form--hidden');
   popup.classList.add('popup--hidden');
+  setTimeout(function () {
+    document.body.style.overflowY = 'auto';
+    document.body.style.paddingRight = '0px';
+    header.style.paddingRight = '0px';
+  }, 1000);
 }
 
 popupLinks.forEach(function (link) {
