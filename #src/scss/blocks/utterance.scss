@@ -43,6 +43,19 @@
         background: none;
         border: none;
         cursor: pointer;
+        transition: color 0.5s ease-in-out;
+
+        &:hover {
+            color: #ff9900;
+        }
+
+        &:focus {
+            color: #ff9900;
+        }
+
+        &:active {
+            color:rgba($color: #ff9900, $alpha: 0.5);
+        }
     }
 
     @media (max-width: 1000px) {

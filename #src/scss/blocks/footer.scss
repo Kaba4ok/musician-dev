@@ -30,6 +30,7 @@
     &__nav-link {
         color: #000000;
         text-decoration: none;
+        transition: color 0.5s ease-in-out;
 
         &:nth-child(1) {
             margin-right: 58px;
@@ -55,6 +56,7 @@
     &__social-link {
         color: rgba($color: #ffffff, $alpha: .6);
         text-decoration: none;
+        transition: color 0.5s ease-in-out;
 
         &:nth-child(1) {
             margin-right: 39px;
@@ -217,6 +219,7 @@
     &__info-site-owner-link {
         color: rgba($color: #000000, $alpha: .6);
         text-decoration: none;
+        transition: color 0.5s ease-in-out;
 
         &:hover {
             color: rgba($color: #EB444A, $alpha: 1);
@@ -228,50 +231,6 @@
 
         &:active {
             color: rgba($color: #EB444A, $alpha: 0.5);
-        }
-    }
-
-    &__cta {
-        position: relative;
-        display: none;
-        align-self: flex-start;
-        padding-left: 45px;
-        margin-bottom: 40px;
-        font-family: "IBM Plex Sans", Arial, sans-serif;
-        font-size: 14px;
-        font-weight: 600;
-        line-height: 20px;
-        letter-spacing: 0.05em;
-        color: #ffffff;
-        text-transform: uppercase;
-        text-decoration: none;
-    }
-
-    &__cta-icon {
-        position: absolute;
-        top: 50%;
-        left: 0;
-        width: 30px;
-        height: 30px;
-        background-color: #EB444A;
-        border-radius: 50%;
-        transform: translateY(-50%);
-
-        span {
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            width: 20px;
-            height: 2px;
-            background-color: #ffffff;
-
-            &:nth-child(1) {
-                transform: translate(-50%, -50%);
-            }
-    
-            &:nth-child(2) {
-                transform: translate(-50%, -50%) rotate(90deg);
-            }
         }
     }
 
@@ -293,12 +252,12 @@
             padding-bottom: 40px;
         }
 
-        &__say-hello {
-            display: none;
+        &__call {
+            margin-bottom: 60px;
         }
 
-        &__cta {
-            display: block;
+        &__say-hello {
+            margin: 0 auto;
         }
     }
 

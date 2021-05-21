@@ -18,14 +18,17 @@ function showPopup(evt) {
   inputName.focus();
 }
 
+function onFormTransitionEnd() {
+  document.body.style.overflowY = 'auto';
+  document.body.style.paddingRight = '0px';
+  header.style.paddingRight = '0px';
+  form.removeEventListener('transitionend', onFormTransitionEnd);
+}
+
 function closePopup() {
   form.classList.add('form--hidden');
   popup.classList.add('popup--hidden');
-  setTimeout(function () {
-    document.body.style.overflowY = 'auto';
-    document.body.style.paddingRight = '0px';
-    header.style.paddingRight = '0px';
-  }, 1000);
+  form.addEventListener('transitionend', onFormTransitionEnd);
 }
 
 popupLinks.forEach(function (link) {
@@ -262,4 +265,30 @@ if (document.documentElement.clientWidth > 1200) {
     trigger: '.prices',
     start: '40%'
   });
-}
+} //------------------------------------------------------------------
+
+
+new window.JustValidate('.form', {
+  rules: {
+    name: {
+      required: true
+    },
+    email: {
+      required: true,
+      email: true
+    },
+    text: {
+      required: false
+    }
+  },
+  messages: {
+    name: {
+      required: 'Это поле обязательно для заполнения',
+      maxLength: 'Должно быть не более 20 символов'
+    },
+    email: {
+      required: 'Это поле обязательно для заполнения',
+      email: 'Неправильное значение'
+    }
+  }
+});

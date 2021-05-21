@@ -82,7 +82,6 @@
         </section>
 
         <section class="story" id="story">
-            <div class="story__bg-layout"></div>
             <div class="container-large">
                 <div class="story__inner-wrapper">
 
@@ -238,13 +237,6 @@
                             <span class="footer__say-hello-btn"></span>
                         </a>
                     </div>
-                    <a class="footer__cta popup-link" href="#">
-                        <div class="footer__cta-icon">
-                            <span></span>
-                            <span></span>
-                        </div>
-                        Start your jorney
-                    </a>
                     <div class="footer__info">
                         <p class="footer__info-copyright">Copyrights © 2020 isakovmusic</p>
                         <p class="footer__info-site-owner">
@@ -257,35 +249,36 @@
     </main>
     
     <section class="popup popup--hidden">
+        <h2 class="visually-hidden">Start your jorney!</h2>
         <form class="popup__form form form--hidden" action="#" method="post" tabindex="1">
 
             <button class="form__close" type="button"><span class="visually-hidden">Close form</span></button>
     
             <div class="form__input-wrapper">
                 <label class="form__label" for="name"><span>Name</span></label>
-                <input class="form__text-input" type="text" id="name">
+                <input class="form__text-input" type="text" id="name" autocomplete="off" data-validate-field="name" maxlength="20">
             </div>
     
             <div class="form__input-wrapper">
                 <label class="form__label" for="email"><span>Email</span></label>
-                <input class="form__text-input" type="email" id="email">
+                <input class="form__text-input" type="email" id="email" autocomplete="off" data-validate-field="email">
             </div>
     
             <div class="form__quantity">
                 <span class="form__label">Quantity of the lessons</span>
                 <div class="form__quantity-item-wrapper">
-                    <input class="form__quantity-input visually-hidden input-visually-hidden" type="radio" name="quantity" value="30" id="30">
+                    <input class="form__quantity-input visually-hidden input-visually-hidden" type="radio" name="quantity" value="30" id="30" data-validate-field="radio">
                     <label for="30" class="form__quantity-item">4x30min</label>
-                    <input class="form__quantity-input visually-hidden input-visually-hidden" type="radio" name="quantity" value="45" id="45">
+                    <input class="form__quantity-input visually-hidden input-visually-hidden" type="radio" name="quantity" value="45" id="45" data-validate-field="radio">
                     <label for="45" class="form__quantity-item">4x45min</label>
-                    <input class="form__quantity-input visually-hidden input-visually-hidden" type="radio" name="quantity" value="60" id="60">
+                    <input class="form__quantity-input visually-hidden input-visually-hidden" type="radio" name="quantity" value="60" id="60" data-validate-field="radio" checked>
                     <label for="60" class="form__quantity-item">4x60min</label>
                 </div>
             </div>
     
             <div class="form__about-user">
                 <label class="form__label" for="about-user">Tell a little bit about <span class="form__label-italic">yourself</span></label>
-                <textarea class="form__textarea form__text-input" id="about-user"></textarea>
+                <textarea class="form__textarea form__text-input" id="about-user" data-validate-field="text"></textarea>
             </div>
     
             <button class="form__submit-btn" type="submit">start your jorney</button>
@@ -294,6 +287,7 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/ScrollTrigger.min.js"></script>
+    <script src="./js/libs/just-validate.min.js"></script>
     <script src="./js/main.js"></script>
 
 </body>

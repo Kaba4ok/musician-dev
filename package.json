@@ -44,5 +44,8 @@
     "gulp-ttf2woff": "^1.1.1",
     "gulp-ttf2woff2": "^3.0.0",
     "gulp-webp": "^4.0.1"
+  },
+  "dependencies": {
+    "just-validate": "^1.5.0"
   }
 }

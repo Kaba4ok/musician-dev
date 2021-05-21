@@ -38,6 +38,7 @@
 
     &__hashtag {
         color: rgba($color: #ffffff, $alpha: 0.6);
+        transition: color 0.5s ease-in-out;
 
         &:hover {
             color: rgba($color: #ffffff, $alpha: 1);
@@ -58,6 +59,11 @@
     }
 
     @media (max-width: 768px) {
+        height: auto;
+
+        &__bg-layout {
+            padding-top: 400px;
+        }
 
         &__slogan-hashtag-wrapper {
             flex-wrap: wrap;
@@ -68,15 +74,11 @@
         }
 
         &__slogan {
-            margin-right: 50px;
+            display: none;
         }
-    }
 
-    @media (max-width: 768px) {
-
-        &__slogan {
-            margin-right: 50px;
-            margin-bottom: 10px;
+        &__hashtag {
+            display: none;
         }
     }
 }

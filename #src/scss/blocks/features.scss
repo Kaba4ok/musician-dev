@@ -106,15 +106,22 @@
         bottom: -310px;
     }
 
+    @media (max-width: 1000px) {
+        
+        &__figure-item-wrapper {
+            padding-top: 60px;
+        }
+    }
+
     @media (max-width: 768px) {
 
         &__figure-item-wrapper {
-            padding-top: 70px;
+            padding-top: 0;
             padding-bottom: 50px;
         }
 
-        &__item--passion {
-            padding-bottom: 50px;
+        &__img {
+            height: 350px;
         }
 
         &__item--commitment {

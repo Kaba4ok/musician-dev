@@ -10,6 +10,7 @@ const path = {
         html: `${project_folder}/`,
         css: `${project_folder}/css/`,
         js: `${project_folder}/js/`,
+        js_libs: `${project_folder}/js/libs/`,
         img: `${project_folder}/img/`,
         fonts: `${project_folder}/fonts/`,
     },
@@ -17,6 +18,7 @@ const path = {
         html: `${source_folder}/index.html`,
         css: `${source_folder}/scss/style.scss`,
         js: `${source_folder}/js/**/*.js`,
+        js_libs: `${source_folder}/js/libs/*.js`,
         img: `${source_folder}/img/*.{jpg,png,svg,webp,ico}`,
         img_no: `${source_folder}/img/notoptimize/*.{jpg,png,svg,webp,ico}`,
         fonts: `${source_folder}/fonts/*.ttf`,
@@ -103,7 +105,7 @@ function images() {
         .pipe(plumber())
         .pipe(
             webp({
-                quality: 70
+                quality: 30
             })
         )
         .pipe(dest(`${source_folder}/img/`))
@@ -114,6 +116,7 @@ function images() {
                     optimizationLevel: 3
                 }),
                 imagemin.mozjpeg({
+                    quality: 30,
                     progressive: true
                 }),
                 // imagemin.svgo()
@@ -126,6 +129,8 @@ function images() {
 function copy() {
     src(path.src.img)
         .pipe(dest(path.build.img))
+    src(path.src.js_libs)
+        .pipe(dest(path.build.js_libs))
     return src(`${source_folder}/fonts/*.{woff,woff2}`)
         .pipe(dest(path.build.fonts))
 }
