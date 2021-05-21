@@ -295,7 +295,7 @@ new window.JustValidate('.form', {
     },
     email: {
       required: 'Это поле обязательно для заполнения',
-      email: 'Неправильное значение'
+      email: 'Неправильное значение. Пример: pochta@pochta.ru'
     }
   }
 });
