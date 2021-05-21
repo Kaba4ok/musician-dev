@@ -8,6 +8,11 @@ var header = document.querySelector('.header');
 var inputName = form.querySelector('#name');
 var beforePopup = document.body.offsetWidth;
 
+function onFormTransitionEndOpen() {
+  form.style.position = 'absolute';
+  form.removeEventListener('transitionend', onFormTransitionEndOpen);
+}
+
 function showPopup(evt) {
   evt.preventDefault();
   form.classList.remove('form--hidden');
@@ -16,19 +21,21 @@ function showPopup(evt) {
   document.body.style.paddingRight = document.body.offsetWidth - beforePopup + 'px';
   header.style.paddingRight = document.body.offsetWidth - beforePopup + 'px';
   inputName.focus();
+  form.addEventListener('transitionend', onFormTransitionEndOpen);
 }
 
-function onFormTransitionEnd() {
+function onFormTransitionEndClose() {
   document.body.style.overflowY = 'auto';
   document.body.style.paddingRight = '0px';
   header.style.paddingRight = '0px';
-  form.removeEventListener('transitionend', onFormTransitionEnd);
+  form.removeEventListener('transitionend', onFormTransitionEndClose);
 }
 
 function closePopup() {
   form.classList.add('form--hidden');
   popup.classList.add('popup--hidden');
-  form.addEventListener('transitionend', onFormTransitionEnd);
+  form.style.position = 'fixed';
+  form.addEventListener('transitionend', onFormTransitionEndClose);
 }
 
 popupLinks.forEach(function (link) {
